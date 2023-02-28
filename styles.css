@@ -1,0 +1,9 @@
+.grid {
+    border: 1px solid black;
+    display: flex;
+    height: 50vw;
+}
+#item {
+    height: 6.25vw;
+    width: 10vw;
+}
