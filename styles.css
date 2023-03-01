@@ -1,9 +1,38 @@
-.grid {
-    border: 1px solid black;
-    display: flex;
-    height: 50vw;
+/* HOME PAGE */
+.start-button, .rules-button {
+    border: 2px solid black;
+    padding: .75vw;
+    margin-top: 2.75vw;
+    font-size: 4vw;
 }
-#item {
-    height: 6.25vw;
-    width: 10vw;
+
+.title {
+    font-size: 6vw;
+}
+
+.background-image {
+    background-color: #0055ff;
+    background-image: url("images/cubes.png");
+}
+
+.index-header {
+    margin-top: 4vw;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header, a, h1, h2 {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: white;
+    transition: 350ms;
+}
+
+hr {
+    background-color: black;
 }
