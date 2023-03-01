@@ -10,10 +10,7 @@
     font-size: 6vw;
 }
 
-.background-image {
-    background-color: #0055ff;
-    background-image: url("images/cubes.png");
-}
+/* Misc. */
 
 .index-header {
     margin-top: 4vw;
@@ -21,6 +18,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.background-image {
+    background-color: #0055ff;
+    background-image: url("images/cubes.png");
 }
 
 header, a, h1, h2 {
@@ -35,4 +37,8 @@ a:hover {
 
 hr {
     background-color: black;
+}
+
+.nav-bar {
+    list-style: none;
 }
