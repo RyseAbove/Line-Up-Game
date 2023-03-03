@@ -59,6 +59,38 @@
 
 /* Misc. */
 
+.circle-1-nav {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 3vw;
+    background-color: #ee5151;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    border: 0.15vw black solid;
+}
+
+.circle-2-nav {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 3vw;
+    background-color: blue;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    border: 0.15vw solid black;
+}
+
+.title-nav {
+    font-size: 2vw;
+}
+
+.nav-bar {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 body {
     display: flex;
     justify-content: space-around;
@@ -79,9 +111,7 @@ a:hover {
     transition: 350ms;
 }
 
-.nav-bar {
-    list-style: none;
-}
+
 
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
