@@ -74,7 +74,17 @@
 
 body {
     margin: 0;
- }
+    font-size: 1vw;
+    line-height: 220%;
+}
+
+h2, p {
+    padding-left: 2vw;
+}
+
+.nav-links {
+    font-size: 2vw;
+}
 
 .circle-1-nav {
     width: 2vw;
@@ -109,7 +119,7 @@ body {
 }
 
 .background-image {
-    background-color: #0055ffc5;
+    background-color: #256dfdc5;
     background-image: url("images/cubes.png");
 }
 
@@ -123,8 +133,6 @@ a:hover {
     transition: 350ms;
 }
 
-
-
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -133,3 +141,9 @@ hr {
     border: 0.02vw solid black;
 }
 
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
