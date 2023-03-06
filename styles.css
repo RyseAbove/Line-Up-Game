@@ -51,13 +51,30 @@
     border: 0.15vw solid black;
 }
 
+.home-body {
+    display: flex;
+    justify-content: space-around;
+}
+
  /* RULES */
  
+.rules-header {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
 .rules {
-    margin-top: 3.5vw;
+    margin-top: 3vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 /* Misc. */
+
+body {
+    margin: 0;
+ }
 
 .circle-1-nav {
     width: 2vw;
@@ -87,13 +104,8 @@
     list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
-}
-
-body {
-    display: flex;
-    justify-content: space-around;
 }
 
 .background-image {
@@ -120,3 +132,4 @@ a:hover {
 hr {
     border: 0.02vw solid black;
 }
+
