@@ -1,7 +1,7 @@
 /* HOME PAGE */
 .start-button, .rules-button {
     border: 0.1vw solid black;
-    border-radius: 3rem;
+    border-radius: 3.5rem;
     padding: 1vw;
     margin-top: 2.75vw;
     font-size: 4vw;
@@ -34,7 +34,7 @@
 .circle-1 {
     width: 6vw;
     height: 6vw;
-    border-radius: 3vw;
+    border-radius: 3.5vw;
     background-color: #ee5151;
     margin-right: 2vw;
     margin-left: 2vw;
@@ -44,7 +44,7 @@
 .circle-2 {
     width: 6vw;
     height: 6vw;
-    border-radius: 3vw;
+    border-radius: 3.5vw;
     background-color: blue;
     margin-right: 2vw;
     margin-left: 2vw;
@@ -59,7 +59,6 @@
  /* RULES */
  
 .rules-header {
-    background-color: white;
     display: flex;
     justify-content: center;
 }
@@ -82,8 +81,14 @@ h2, p {
     padding-left: 2vw;
 }
 
-.nav-links {
+.nav-link1,
+.nav-link2 {
     font-size: 2vw;
+    border: 0.1vw solid black;
+    border-radius: 3.5rem;
+    padding: 1vw;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .5);
 }
 
 .circle-1-nav {
@@ -116,6 +121,7 @@ h2, p {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-right: 2vw;
 }
 
 .background-image {
