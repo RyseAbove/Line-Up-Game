@@ -32,7 +32,7 @@ let prearr = [
     ["e", "e", "e", "e", "e", "e", "e", "e"],              
 ]
 
-let turndata = [false,false,false,false,false,false]
+let turndata = [false,false,false,false,false]
 
 //placement
 
@@ -59,9 +59,11 @@ function placefunc(event){
 
             rollfuncl2();
             rollfuncl3();
-            //rollfuncl4();
-            //rollfuncl5();
-            //rollfuncl6();
+            rollfuncl4();
+            rollfuncl5();
+            rollfuncl6();
+            console.log(turndata)
+            diefunc();
 
             if(((gamecheck.length + 1)/2) % 1 == 0){
                 color = "blue";
@@ -102,7 +104,7 @@ function rollfuncl2(){
                 } 
             }
         }
-        for(let m = 0; m < boolarr[i].length; m++){
+        for(let m = 0; m < (boolarr[i].length - 1); m++){
             if(boolarr[i][m] != 'e'){
                 if((boolarr[i][m] == boolarr[i+1][m+1]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i+1][m+1] != prearr[i+1][m+1]))){
                     turndata[0] = true;
@@ -110,8 +112,8 @@ function rollfuncl2(){
             }
         }
     }
-    for(let i = 9; i > 0; i--){//fix
-        for(let m = 0; m < boolarr[i].length; m++){
+    for(let i = 9; i > 1    ; i--){//fix
+        for(let m = 0; m < (boolarr[i].length - 1); m++){
             if(boolarr[i][m] != 'e'){
                 if((boolarr[i][m] == boolarr[i-1][m+1]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i-1][m+1] != prearr[i-1][m+1]))){
                     turndata[0] = true;
@@ -120,7 +122,7 @@ function rollfuncl2(){
         }
     }
     for(let i = 0; i < (boolarr.length); i++){//vertical
-        for(let m = 0; m < boolarr[i].length; m++){
+        for(let m = 0; m < (boolarr[i].length - 1); m++){
             if(boolarr[i][m] != 'e'){
                 if((boolarr[i][m] == boolarr[i][m+1]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i][m+1] != prearr[i][m+1]))){
                     turndata[0] = true;
@@ -128,7 +130,6 @@ function rollfuncl2(){
             }
         }
     }
-    console.log(turndata)
 }
 
 function rollfuncl3(){
@@ -143,27 +144,27 @@ function rollfuncl3(){
                 } 
             }
         }
-        for(let m = 0; m < boolarr[i].length; m++){
+        for(let m = 0; m < (boolarr[i].length - 2); m++){
             if(boolarr[i][m] != 'e'){
-                if((boolarr[i][m] == boolarr[i+1][m+1] == boolarr[i+2][m+2]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i+1][m+1] != prearr[i+1][m+1]) || (boolarr[i+2][m+2] != prearr[i+2][m+2]))){
+                if((boolarr[i][m] == boolarr[i+1][m+1]) && (boolarr[i][m] == boolarr[i+2][m+2]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i+1][m+1] != prearr[i+1][m+1]) || (boolarr[i+2][m+2] != prearr[i+2][m+2]))){
                     turndata[1] = true;
                 } 
             }
         }
     }
-    for(let i = 9; i > 0; i--){//fix
-        for(let m = 0; m < boolarr[i].length; m++){
+    for(let i = 9; i > 2; i--){//fix
+        for(let m = 0; m < (boolarr[i].length - 2); m++){
             if(boolarr[i][m] != 'e'){
-                if((boolarr[i][m] == boolarr[i-1][m+1]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i-1][m+1] != prearr[i-1][m+1]))){
+                if((boolarr[i][m] == boolarr[i-1][m+1]) && (boolarr[i][m] == boolarr[i-2][m+2]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i-1][m+1] != prearr[i-1][m+1]) || boolarr[i-2][m+2] == prearr[i-2][m+2])){
                     turndata[1] = true;
                 }
             }
         }
     }
     for(let i = 0; i < (boolarr.length); i++){//vertical
-        for(let m = 0; m < boolarr[i].length; m++){
+        for(let m = 0; m < (boolarr[i].length - 2); m++){
             if(boolarr[i][m] != 'e'){
-                if((boolarr[i][m] == boolarr[i][m+1]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i][m+1] != prearr[i][m+1]))){
+                if((boolarr[i][m] == boolarr[i][m+1]) && (boolarr[i][m] == boolarr[i][m+2]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i][m+1] != prearr[i][m+1]) || (boolarr[i][m+2] != prearr[i][m+2]))){
                     turndata[1] = true;
                 }
             }
@@ -171,6 +172,125 @@ function rollfuncl3(){
     }
 }
 
+function rollfuncl4(){
+    for(i = 0; i < 5; i++){
+        turndata[i].length = 0;
+    }
+    for(let i = 0; i < (boolarr.length - 3); i++){//horizontals
+        for(let m = 0; m < boolarr[i].length; m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i+1][m]) && (boolarr[i][m] == boolarr[i+2][m]) && (boolarr[i][m] == boolarr[i+3][m])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i+1][m] != prearr[i+1][m]) || (boolarr[i+2][m] != prearr[i+2][m]) || (boolarr[i+3][m] != prearr[i+3][m]))){
+                    turndata[2] = true;
+                } 
+            }
+        }
+        for(let m = 0; m < (boolarr[i].length-3); m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i+1][m+1]) && (boolarr[i][m] == boolarr[i+2][m+2]) && (boolarr[i][m] == boolarr[i+3][m+3])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i+1][m+1] != prearr[i+1][m+1]) || (boolarr[i+2][m+2] != prearr[i+2][m+2]) || (boolarr[i+3][m+3] != prearr[i+3][m+3]))){
+                    turndata[2] = true;
+                } 
+            }
+        }
+    }
+    for(let i = 9; i > 3; i--){//fixz
+        for(let m = 0; m < (boolarr[i].length-3); m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i-1][m+1]) && (boolarr[i][m] == boolarr[i-2][m+2]) && (boolarr[i][m] == boolarr[i-3][m+3])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i-1][m+1] != prearr[i-1][m+1]) || (boolarr[i-2][m+2] != prearr[i-2][m+2]) || (boolarr[i-3][m+3] != prearr[i-3][m+3]))){
+                    turndata[2] = true;
+                }
+            }
+        }
+    }
+    for(let i = 0; i < (boolarr.length); i++){//vertical
+        for(let m = 0; m < (boolarr[i].length - 3); m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i][m+1]) && (boolarr[i][m] == boolarr[i][m+2]) && (boolarr[i][m] == boolarr[i][m+3])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i][m+1] != prearr[i][m+1]) || (boolarr[i][m+2] != prearr[i][m+2]) || (boolarr[i][m+3] != prearr[i][m+3]))){
+                    turndata[2] = true;
+                }
+            }
+        }
+    }
+}
+
+function rollfuncl5(){
+    for(i = 0; i < 5; i++){
+        turndata[i].length = 0;
+    }
+    for(let i = 0; i < (boolarr.length - 4); i++){//horizontals
+        for(let m = 0; m < boolarr[i].length; m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i+1][m]) && (boolarr[i][m] == boolarr[i+2][m]) && (boolarr[i][m] == boolarr[i+3][m]) && (boolarr[i][m] == boolarr[i+4][m])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i+1][m] != prearr[i+1][m]) || (boolarr[i+2][m] != prearr[i+2][m]) || (boolarr[i+3][m] != prearr[i+3][m]) || (boolarr[i+4][m] != prearr[i+4][m]))){
+                    turndata[3] = true;
+                } 
+            }
+        }
+        for(let m = 0; m < (boolarr[i].length - 4); m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i+1][m+1]) && (boolarr[i][m] == boolarr[i+2][m+2]) && (boolarr[i][m] == boolarr[i+3][m+3]) && (boolarr[i][m] == boolarr[i+4][m+4])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i+1][m+1] != prearr[i+1][m+1]) || (boolarr[i+2][m+2] != prearr[i+2][m+2]) || (boolarr[i+3][m+3] != prearr[i+3][m+3]) || (boolarr[i+4][m+4] != prearr[i+4][m+4]))){
+                    turndata[3] = true;
+                } 
+            }
+        }
+    }
+    for(let i = 9; i > 4; i--){//fixz
+        for(let m = 0; m < (boolarr[i].length - 4); m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i-1][m+1]) && (boolarr[i][m] == boolarr[i-2][m+2]) && (boolarr[i][m] == boolarr[i-3][m+3]) && (boolarr[i][m] == boolarr[i-4][m+4])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i-1][m+1] != prearr[i-1][m+1]) || (boolarr[i-2][m+2] != prearr[i-2][m+2]) || (boolarr[i-3][m+3] != prearr[i-3][m+3]) || (boolarr[i-4][m+4] != prearr[i-4][m+4]))){
+                    turndata[3] = true;
+                }
+            }
+        }
+    }
+    for(let i = 0; i < (boolarr.length); i++){//vertical
+        for(let m = 0; m < (boolarr[i].length - 4); m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i][m+1]) && (boolarr[i][m] == boolarr[i][m+2]) && (boolarr[i][m] == boolarr[i][m+3]) && (boolarr[i][m] == boolarr[i][m+4]) && (boolarr[i][m] == boolarr[i][m+5])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i][m+1] != prearr[i][m+1]) || (boolarr[i][m+2] != prearr[i][m+2]) || (boolarr[i][m+3] != prearr[i][m+3]) || (boolarr[i][m+4] != prearr[i][m+4]))){
+                    turndata[3] = true;
+                }
+            }
+        }
+    }
+}
+
+function rollfuncl6(){
+    for(i = 0; i < 5; i++){
+        turndata[i].length = 0;
+    }
+    for(let i = 0; i < (boolarr.length - 5); i++){//horizontals
+        for(let m = 0; m < boolarr[i].length; m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i+1][m]) && (boolarr[i][m] == boolarr[i+2][m]) && (boolarr[i][m] == boolarr[i+3][m]) && (boolarr[i][m] == boolarr[i+4][m]) && (boolarr[i][m] == boolarr[i+5][m])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i+1][m] != prearr[i+1][m]) || (boolarr[i+2][m] != prearr[i+2][m]) || (boolarr[i+3][m] != prearr[i+3][m]) || (boolarr[i+4][m] != prearr[i+4][m]) || (boolarr[i+5][m] != prearr[i+5][m]))){
+                    turndata[4] = true;
+                } 
+            }
+        }
+        for(let m = 0; m < (boolarr[i].length - 5); m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i+1][m+1]) && (boolarr[i][m] == boolarr[i+2][m+2]) && (boolarr[i][m] == boolarr[i+3][m+3]) && (boolarr[i][m] == boolarr[i+4][m+4]) && (boolarr[i][m] == boolarr[i+5][m+5])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i+1][m+1] != prearr[i+1][m+1]) || (boolarr[i+2][m+2] != prearr[i+2][m+2]) || (boolarr[i+3][m+3] != prearr[i+3][m+3]) || (boolarr[i+4][m+4] != prearr[i+4][m+4]) || (boolarr[i+5][m+5] != prearr[i+5][m+5]))){
+                    turndata[4] = true;
+                } 
+            }
+        }
+    }
+    for(let i = 9; i > 5; i--){//fixz
+        for(let m = 0; m < (boolarr[i].length - 5); m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i-1][m+1]) && (boolarr[i][m] == boolarr[i-2][m+2]) && (boolarr[i][m] == boolarr[i-3][m+3]) && (boolarr[i][m] == boolarr[i-4][m+4]) && (boolarr[i][m] == boolarr[i-5][m+5])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i-1][m+1] != prearr[i-1][m+1]) || (boolarr[i-2][m+2] != prearr[i-2][m+2]) || (boolarr[i-3][m+3] != prearr[i-3][m+3]) || (boolarr[i-4][m+4] != prearr[i-4][m+4]) || (boolarr[i-5][m+5] != prearr[i-5][m+5]))){
+                    turndata[4] = true;
+                }
+            }
+        }
+    }
+    for(let i = 0; i < (boolarr.length); i++){//vertical
+        for(let m = 0; m < (boolarr[i].length - 5); m++){
+            if(boolarr[i][m] != 'e'){
+                if(((boolarr[i][m] == boolarr[i][m+1]) && (boolarr[i][m] == boolarr[i][m+2]) && (boolarr[i][m] == boolarr[i][m+3]) && (boolarr[i][m] == boolarr[i][m+4]) && (boolarr[i][m] == boolarr[i][m+5])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i][m+1] != prearr[i][m+1]) || (boolarr[i][m+2] != prearr[i][m+2]) || (boolarr[i][m+3] != prearr[i][m+3]) || (boolarr[i][m+4] != prearr[i][m+4]) || (boolarr[i][m+5] != prearr[i][m+5]))){
+                    turndata[4] = true;
+                }
+            }
+        }
+    }
+}
 
 
 function diefunc(x){
