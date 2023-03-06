@@ -62,7 +62,6 @@ function placefunc(event){
             rollfuncl4();
             rollfuncl5();
             rollfuncl6();
-            console.log(turndata)
             diefunc();
 
             if(((gamecheck.length + 1)/2) % 1 == 0){
@@ -293,24 +292,28 @@ function rollfuncl6(){
 }
 
 
-function diefunc(x){
-    if(x == 1){
-        Math.random()
+function diefunc(){
+    let prob;
+    for(let i = 0; i < turndata.length; i++){
+        if(turndata[i] == true){
+            prob = i;
+        }
     }
-    else if(x == 2){
 
+    if(prob == 0){
+        console.log("roll for a 1");
     }
-    else if(x == 3){
-
+    else if(prob == 1){
+        console.log("roll for a 1,2");
     }
-    else if(x == 4){
-        
+    else if(prob == 2){
+        console.log("roll for a 1,2,3");
     }
-    else if(x == 5){
-        
+    else if(prob == 3){
+        console.log("roll for a 1,2,3,4");
     }
-    else if(x == 6){
-        
+    else if(prob == 4){
+        console.log("roll for a 1,2,3,4,5");    
     }
 }
 
