@@ -2,26 +2,32 @@
 body{
     display: flex;
     justify-content: space-around;
+    max-width: 100vw;
 }
 
 /*table*/
 .tablecont{
     display: flex;
-    width: 80vw;
-    height: 64vw;
+    width: 60vw;
+    height: 48vw;
 }
 .tablecont>div{
-    width: 8vw;
-    height: 64vw;
+    width: 6vw;
+    height: 48vw;
     display: flex;
     flex-wrap: wrap;  
 }
 .tablecont>div>div{
-    height: 8vw;
-    width: 8vw;
+    height: 6vw;
+    width: 6vw;
     border: 1px solid black;
 }
 .tablecont>div>div>canvas{
-    width: 16vw;
-    height: 8vw;
+    width: 6vw;
+    height: 6vw;
+}
+
+/*sidepanel*/
+.sidepanel{
+    width: 40vw;
 }
