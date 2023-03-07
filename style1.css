@@ -65,6 +65,7 @@
 
 .rules {
     margin-top: 3vw;
+    margin-bottom: 3vw;
     margin-left: 10vw;
     margin-right: 10vw;
 }
@@ -116,12 +117,22 @@ h2, p {
 }
 
 .nav-bar {
-    list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-right: 2vw;
+}
+
+.home-nav, .rules-nav {
+    border: 0.1vw solid black;
+    border-radius: 3.5rem;
+    padding: 0.3vw;
+    margin-right: 2vw;
+    font-size: 2vw;
+    width: 6vw;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .5);
 }
 
 .background-image {
