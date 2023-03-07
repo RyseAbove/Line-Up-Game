@@ -57,14 +57,10 @@
 }
 
  /* RULES */
- 
-.rules-header {
-    display: flex;
-    justify-content: center;
-}
 
 .rules {
     margin-top: 3vw;
+    margin-bottom: 3vw;
     margin-left: 10vw;
     margin-right: 10vw;
 }
@@ -72,6 +68,16 @@
 
 
 /* Misc. */
+
+.rules-header {
+    display: flex;
+    justify-content: center;
+}
+
+.board-header {
+    display: flex;
+    flex-direction: column;
+}
 
 body {
     margin: 0;
@@ -94,8 +100,8 @@ h2, p {
 }
 
 .circle-1-nav {
-    width: 2vw;
-    height: 2vw;
+    width: 2.5vw;
+    height: 2.5vw;
     border-radius: 3vw;
     background-color: #ee5151;
     margin-right: 2vw;
@@ -104,8 +110,8 @@ h2, p {
 }
 
 .circle-2-nav {
-    width: 2vw;
-    height: 2vw;
+    width: 2.5vw;
+    height: 2.5vw;
     border-radius: 3vw;
     background-color: blue;
     margin-right: 2vw;
@@ -118,12 +124,23 @@ h2, p {
 }
 
 .nav-bar {
-    list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-right: 2vw;
+    margin-top: 2vw;
+}
+
+.home-nav, .rules-nav {
+    border: 0.1vw solid black;
+    border-radius: 3.5rem;
+    padding: 0.3vw;
+    margin-right: 2vw;
+    font-size: 2vw;
+    width: 6vw;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .5);
 }
 
 .background-image {
