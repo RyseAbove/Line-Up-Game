@@ -57,11 +57,6 @@
 }
 
  /* RULES */
- 
-.rules-header {
-    display: flex;
-    justify-content: center;
-}
 
 .rules {
     margin-top: 3vw;
@@ -71,6 +66,16 @@
 }
 
 /* Misc. */
+
+.rules-header {
+    display: flex;
+    justify-content: center;
+}
+
+.board-header {
+    display: flex;
+    flex-direction: column;
+}
 
 body {
     margin: 0;
@@ -93,8 +98,8 @@ h2, p {
 }
 
 .circle-1-nav {
-    width: 2vw;
-    height: 2vw;
+    width: 2.5vw;
+    height: 2.5vw;
     border-radius: 3vw;
     background-color: #ee5151;
     margin-right: 2vw;
@@ -103,8 +108,8 @@ h2, p {
 }
 
 .circle-2-nav {
-    width: 2vw;
-    height: 2vw;
+    width: 2.5vw;
+    height: 2.5vw;
     border-radius: 3vw;
     background-color: blue;
     margin-right: 2vw;
@@ -122,6 +127,7 @@ h2, p {
     justify-content: space-between;
     align-items: center;
     margin-right: 2vw;
+    margin-top: 2vw;
 }
 
 .home-nav, .rules-nav {
