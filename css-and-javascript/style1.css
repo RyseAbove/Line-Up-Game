@@ -4,7 +4,7 @@
     border: 0.1vw solid black;
     border-radius: 3.5rem;
     padding: 1vw;
-    margin-top: 2.75vw;
+    margin-top: 4vw;
     font-size: 4vw;
     width: 10vw;
     text-align: center;
@@ -155,7 +155,7 @@ p {
 
 .background-image {
     background-color: #256dfdc5;
-    background-image: url("images/cubes.png");
+    background-image: url("/images/cubes.png");
 }
 
 header {
