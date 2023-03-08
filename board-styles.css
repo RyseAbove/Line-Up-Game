@@ -2,26 +2,42 @@
 body{
     display: flex;
     justify-content: space-around;
+    max-width: 100vw;
 }
 
 /*table*/
 .tablecont{
     display: flex;
-    width: 80vw;
-    height: 64vw;
+    width: 60vw;
+    height: 48vw;
+    background-image: url(/images/Pine_wood_Table_Top_2.jpg);
+    background-size: cover;
 }
 .tablecont>div{
-    width: 8vw;
-    height: 64vw;
+    width: 6vw;
+    height: 48vw;
     display: flex;
     flex-wrap: wrap;  
 }
 .tablecont>div>div{
-    height: 8vw;
-    width: 8vw;
+    height: 6vw;
+    width: 6vw;
     border: 1px solid black;
 }
 .tablecont>div>div>canvas{
-    width: 16vw;
-    height: 8vw;
+    width: 6vw;
+    height: 6vw;
+}
+
+.wood{
+    background-color: 0;
+}
+
+.red{
+    background-color: #9b9b9b;
+}
+
+/*sidepanel*/
+.sidepanel{
+    width: 40vw;
 }

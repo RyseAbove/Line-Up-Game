@@ -8,16 +8,12 @@ let boolarr = [
     ["e", "e", "e", "e", "e", "e", "e", "e"], 
     ["e", "e", "e", "e", "e", "e", "e", "e"], 
     ["e", "e", "e", "e", "e", "e", "e", "e"], 
-    ["e", "e", "e", "e", "e", "e", "e", "e"],                                      
+    ["e", "e", "e", "e", "e", "e", "e", "e"]                                      
 ]
 
-let gamecheck = [
+let gamecheck = []
 
-]
-
-let clist = [
-
-]
+let clist = []
 
 let prearr = [
     ["e", "e", "e", "e", "e", "e", "e", "e"], 
@@ -29,7 +25,7 @@ let prearr = [
     ["e", "e", "e", "e", "e", "e", "e", "e"], 
     ["e", "e", "e", "e", "e", "e", "e", "e"], 
     ["e", "e", "e", "e", "e", "e", "e", "e"], 
-    ["e", "e", "e", "e", "e", "e", "e", "e"],              
+    ["e", "e", "e", "e", "e", "e", "e", "e"]              
 ]
 
 let turndata = [false,false,false,false,false]
@@ -50,8 +46,8 @@ function placefunc(event){
             let canvas = document.getElementById(`${num + 1}${i + 1}`);
             let draw = canvas.getContext("2d");
             let wid = (top.innerWidth /100);
-
-            draw.arc( 2.95*wid, 2.95*wid, 2*wid, 0, 2 * Math.PI);
+            //( canvas.width/2, canvas.height/2, 2*wid, 0, 2 * Math.PI)
+            draw.ellipse(canvas.width/2, canvas.height/2, 4*wid, 2*wid, 0, 0, Math.PI*2)
             draw.stroke();
             draw.fillStyle = fill;
             draw.fill();
