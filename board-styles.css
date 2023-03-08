@@ -10,6 +10,7 @@ body{
     display: flex;
     width: 60vw;
     height: 48vw;
+    margin-top: 1vw;
     background-image: url(/images/Pine_wood_Table_Top_2.jpg);
     background-size: cover;
 }
@@ -22,11 +23,18 @@ body{
 .tablecont>div>div{
     height: 6vw;
     width: 6vw;
+    box-sizing: border-box;
     border: 1px solid black;
 }
 .tablecont>div>div>canvas{
     width: 6vw;
     height: 6vw;
+}
+
+.t-area{
+    width: 62vw;
+    display: flex;
+    justify-content: space-around;
 }
 
 .wood{
@@ -39,5 +47,80 @@ body{
 
 /*sidepanel*/
 .sidepanel{
-    width: 40vw;
+    width: 37vw;
+    margin-left: 1vw;
+    height: 48vw;
+    margin-top: 1vw;
+}
+.sidepanel>section{
+    height: 24vw;
+}
+div>h2{
+    margin-top: 0;
+    text-align: center;
+}
+
+/*pointsec*/
+
+.pointcont{
+    display: flex;
+    flex-wrap: wrap;
+    width: 37vw;
+    height: 24vw;
+}
+
+.pointcont>h2{
+    height: 2vw;
+    width: 38vw;
+    padding-left: 0;
+}
+
+.point{
+    width: 38vw;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: .15vw solid black;
+    box-sizing: border-box;
+}
+.point>div{
+    width: 12vw;
+    height: 12vw;
+    border: .15vw solid black;
+    margin: 0;
+    padding-left: 0;
+    border-radius: 6vw;
+    vertical-align: middle;
+
+}
+
+.point>div>{
+    display: flex;
+    justify-content: space-around;
+}
+
+.point>div>p{
+    text-align: center;
+    padding-left: 0;
+    margin-top: 5vw;
+    font-size: 2vw;
+    color: white;
+}
+
+.point-red{
+    background-color: #ee5151;
+}
+.point-blue{
+    background-color: #5187EE;
+}
+
+/*diesec*/
+
+#pos{
+    text-align: center;
+    padding-left: 0;
+}
+
+.die>h2{
+   padding-left: 0;
+   margin: 0;
 }
