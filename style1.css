@@ -88,6 +88,7 @@ body {
     margin: 0;
     font-size: 1vw;
     line-height: 220%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h2,
@@ -155,6 +156,10 @@ p {
     background-image: url("images/cubes.png");
 }
 
+header {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 header,
 a,
 h1,
@@ -166,10 +171,6 @@ h2 {
 a:hover {
     background-color: white;
     transition: 350ms;
-}
-
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 hr {
