@@ -10,6 +10,8 @@ body{
     display: flex;
     width: 60vw;
     height: 48vw;
+    background-image: url(/images/Pine_wood_Table_Top_2.jpg);
+    background-size: cover;
 }
 .tablecont>div{
     width: 6vw;
@@ -25,6 +27,14 @@ body{
 .tablecont>div>div>canvas{
     width: 6vw;
     height: 6vw;
+}
+
+.wood{
+    background-color: 0;
+}
+
+.red{
+    background-color: #9b9b9b;
 }
 
 /*sidepanel*/
