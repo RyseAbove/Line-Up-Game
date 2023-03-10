@@ -102,6 +102,7 @@ function placefunc(event) {
                 rollfuncl4();
                 rollfuncl5();
                 rollfuncl6();
+                console.log(turndata);
                 tellfunc();
 
                 if (((gamecheck.length + 1) / 2) % 1 == 0) {
@@ -135,7 +136,7 @@ function fillarr() {
 }
 
 function cfunc() {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
         turndata[i] = false;
     }
 }
