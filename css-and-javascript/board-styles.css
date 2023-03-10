@@ -127,6 +127,7 @@ div>h2{
 
 .background-image {
     background-color: #8ca8d1;
-    background-image: url(/images/diamond-upholstery.png);
-    
+    background-image: url(/images/circles.png);
+    /* background-image: url(/images/diamond-upholstery.png); */
+    /* background-image: url(/images/diagmonds-light.png); */
 }
