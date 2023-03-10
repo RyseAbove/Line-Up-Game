@@ -120,7 +120,14 @@ div>h2{
     padding-left: 0;
 }
 
-.die>h2{
+.roll-die>h2{
    padding-left: 0;
    margin: 0;
+}
+
+.background-image {
+    background-color: #8ca8d1;
+    background-image: url(/images/circles.png);
+    /* background-image: url(/images/diamond-upholstery.png); */
+    /* background-image: url(/images/diagmonds-light.png); */
 }
