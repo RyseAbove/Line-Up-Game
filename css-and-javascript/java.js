@@ -32,7 +32,7 @@ let turndata = [false, false, false, false, false]
 
 let rollopt;
 
-let points = [0,0];
+let points = [0, 0];
 
 
 //placement
@@ -42,7 +42,7 @@ let fill = "#EE5151";
 
 function placefunc(event) {
     if (rollopt == true) {
-        return; 
+        return;
     }
     else {
         let box = event.target;
@@ -309,79 +309,109 @@ function tellfunc() {
 let dieresult;
 
 function diefunc() {
-    if (rollopt == false){
+    if (rollopt == false) {
         return;
     }
-    else{
+    else {
         let prob;
-    for (let i = 0; i < turndata.length; i++) {
-        if (turndata[i] == true) {
-            prob = i;
+        for (let i = 0; i < turndata.length; i++) {
+            if (turndata[i] == true) {
+                prob = i;
+            }
+        }
+        if (prob == 0) {
+            roller();
+            if (dieresult == 0) {
+                addpoint();
+            }
+            else {
+                document.getElementById("pos").innerHTML = "no points gained"
+            }
+            rollopt = false;
+        }
+        else if (prob == 1) {
+            roller();
+            if (dieresult == (0 || 1)) {
+                addpoint();
+            }
+            else {
+                document.getElementById("pos").innerHTML = "no points gained"
+            }
+            rollopt = false;
+        }
+        else if (prob == 2) {
+            roller();
+            if (dieresult == (0 || 1 || 2)) {
+                addpoint();
+            }
+            else {
+                document.getElementById("pos").innerHTML = "no points gained"
+            }
+            rollopt = false;
+        }
+        else if (prob == 3) {
+            roller();
+            if (dieresult == (0 || 1 || 2 || 3)) {
+                addpoint();
+            }
+            else {
+                document.getElementById("pos").innerHTML = "no points gained"
+            }
+            rollopt = false;
+        }
+        else if (prob == 4) {
+            roller();
+            if (dieresult == (0 || 1 || 2 || 3 || 4)) {
+                addpoint();
+            }
+            else {
+                document.getElementById("pos").innerHTML = "no points gained"
+            }
+            rollopt = false;
         }
     }
-    if (prob == 0) {
-        roller();
-        if (dieresult == 0) {
-            addpoint();
-        }
-        else {
-            document.getElementById("pos").innerHTML = "no points gained"
-        }
-        rollopt = false;
-    }
-    else if (prob == 1) {
-        roller();
-        if (dieresult == (0 || 1)) {
-            addpoint();
-        }
-        else {
-            document.getElementById("pos").innerHTML = "no points gained"
-        }
-        rollopt = false;
-    }
-    else if (prob == 2) {
-        roller();
-        if (dieresult == (0 || 1 || 2)) {
-            addpoint();
-        }
-        else {
-            document.getElementById("pos").innerHTML = "no points gained"
-        }
-        rollopt = false;
-    }
-    else if (prob == 3) {
-        roller();
-        if (dieresult == (0 || 1 || 2 || 3)) {
-            addpoint();
-        }
-        else {
-            document.getElementById("pos").innerHTML = "no points gained"
-        }
-        rollopt = false;
-    }
-    else if (prob == 4) {
-        roller();
-        if (dieresult == (0 || 1 || 2 || 3 || 4)) {
-            addpoint();
-        }
-        else {
-            document.getElementById("pos").innerHTML = "no points gained"
-        }
-        rollopt = false;
-    }
-    }
-    
+
 }
 
-function addpoint(){
+function addpoint() {
     points[precolor] += 1;
     document.getElementById("point-red").innerHTML = points[0];
     document.getElementById("point-blue").innerHTML = points[1];
+
+    document.getElementById("pos").innerHTML = ("Point Gained")
 }
-
-
 
 function roller() {
-    dieresult = Math.floor(Math.random()*6);
+    dieresult = Math.floor(Math.random() * 6);
     console.log(dieresult)
 }
+
+// Dice
+
+// function rollDice() {
+//     const dice = [...document.querySelectorAll(".die-list")];
+//     dice.forEach(die => {
+//         toggleClasses(die);
+//         die.dataset.roll = getRandomNumber(1, 6);
+//     });
+// }
+
+// function toggleClasses(die) {
+//     die.classList.toggle("odd-roll")
+//     die.classList.toggle("even-roll");
+// }
+
+// function getRandomNumber(min, max) {
+//     min = Math.ceil(min);
+//     max = Math.floor(max);
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// window.addEventListener('DOMContentLoaded', function() {
+
+// const btn = document.querySelector('#roll-button');
+// btn.addEventListener('click', rollDice);
+
+// });
+
+// document.getElementById("#roll-button").addEventListener("click", rollDice);

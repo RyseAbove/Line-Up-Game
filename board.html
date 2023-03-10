@@ -8,10 +8,11 @@
     <title>Line-Up!</title>
     <link rel="stylesheet" href="css-and-javascript/board-styles.css">
     <link rel="stylesheet" href="css-and-javascript/style1.css">
+    <link rel="stylesheet" href="css-and-javascript/dice.css">
     <script src="css-and-javascript/java.js"></script>
 </head>
 
-<body>
+<body class="background-image">
     <div class="sidepanel">
         <section class="score">
             <div class="pointcont">
@@ -31,11 +32,83 @@
             </div>
         </section>
         <section>
-            <div class="die">
+            <div class="roll-die">
                 <h2>Roll</h2>
-                <button onclick="diefunc()">Roll a Die</button>
+                <button id="roll-button" type="button" onclick="diefunc()" onclick="rollDice()">Roll a Die</button>
             </div>
             <p id="pos"></p>
+            <!-- <div class="die">
+                <ol class="die-list even-roll" data-roll="1" id="die-1">
+                    <li class="die-item" data-side="1">
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="2">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="3">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="4">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="5">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="6">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                </ol>
+                <ol class="die-list odd-roll" data-roll="1" id="die-2">
+                    <li class="die-item" data-side="1">
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="2">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="3">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="4">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="5">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="6">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                </ol>
+            </div> -->
         </section>
     </div>
     <div class="t-area">
