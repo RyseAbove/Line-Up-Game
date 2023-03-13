@@ -44,29 +44,29 @@ let fill = "#EE5151";
 
 /*hovering premove*/
 
-function premove(event){
+function premove(event) {
     let box = event.target;
     let col = box.parentElement.parentElement.id;
     let num = parseFloat(col.replace('c', '')) - 1;
     let first = 0;
-    if(boolarr[num][first] == 'e'){
+    if (boolarr[num][first] == 'e') {
         let canvas = document.getElementById(`${num + 1}${first + 1}`);
         let draw = canvas.getContext("2d");
         let wid = (top.innerWidth / 100);
-                //( canvas.width/2, canvas.height/2, 2*wid, 0, 2 * Math.PI)
+        //( canvas.width/2, canvas.height/2, 2*wid, 0, 2 * Math.PI)
         draw.ellipse(canvas.width / 2, canvas.height / 2, 4 * wid, 2 * wid, 0, 0, Math.PI * 2)
         draw.stroke();
         draw.fillStyle = fill;
-        draw.fill(); 
+        draw.fill();
     }
 }
 
-function remove(event){
+function remove(event) {
     let box = event.target;
     let col = box.parentElement.parentElement.id;
     let num = parseFloat(col.replace('c', '')) - 1;
     let first = 0;
-    if(boolarr[num][first] == 'e'){
+    if (boolarr[num][first] == 'e') {
         let canvas = document.getElementById(`${num + 1}${first + 1}`);
         let draw = canvas.getContext("2d");
         draw.clearRect(0, 0, canvas.width, canvas.height);
@@ -419,6 +419,22 @@ function addpoint() {
 function roller() {
     dieresult = Math.floor(Math.random() * 6);
     console.log(dieresult)
+}
+
+// Coin
+
+function flipCoin() {
+    x = (Math.floor(Math.random() * 2));
+    if (x <= 1) {
+        document.getElementById('side-a');
+    } else {
+        document.getElementById('side-b');
+    }
+
+    let i = 1 + (Math.floor(Math.random() * 10));
+    document.getElementById("coin").style.transform = 'rotate(' + String(i * 30) + ')';
+
+    console.log(i);
 }
 
 // Dice
