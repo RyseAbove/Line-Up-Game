@@ -331,7 +331,7 @@ function rollfuncl6() {
 function tellfunc() {
     for (let i = 0; i < turndata.length; i++) {
         if (turndata[i] == true) {
-            document.getElementById("pos").innerHTML = "a roll is possible";
+            document.getElementById("pos").innerHTML = "A roll is possible";
             rollopt = true;
             break;
         }
@@ -365,7 +365,7 @@ function diefunc() {
                 addpoint();
             }
             else {
-                document.getElementById("pos").innerHTML = "no points gained"
+                document.getElementById("pos").innerHTML = "No point gained"
             }
             rollopt = false;
         }
@@ -375,7 +375,7 @@ function diefunc() {
                 addpoint();
             }
             else {
-                document.getElementById("pos").innerHTML = "no points gained"
+                document.getElementById("pos").innerHTML = "No point gained"
             }
             rollopt = false;
         }
@@ -385,7 +385,7 @@ function diefunc() {
                 addpoint();
             }
             else {
-                document.getElementById("pos").innerHTML = "no points gained"
+                document.getElementById("pos").innerHTML = "No point gained"
             }
             rollopt = false;
         }
@@ -395,7 +395,7 @@ function diefunc() {
                 addpoint();
             }
             else {
-                document.getElementById("pos").innerHTML = "no points gained"
+                document.getElementById("pos").innerHTML = "No point gained"
             }
             rollopt = false;
         }
@@ -405,7 +405,7 @@ function diefunc() {
                 addpoint();
             }
             else {
-                document.getElementById("pos").innerHTML = "no points gained"
+                document.getElementById("pos").innerHTML = "No point gained"
             }
             rollopt = false;
         }
