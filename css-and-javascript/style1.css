@@ -221,14 +221,13 @@ footer {
     width: 6vw;
     height: 6vw;
     cursor: pointer;
-    transition: 1s ease-in;
     transform-style: preserve-3d;
 }
 
 #coin div {
     width: 100%;
     height: 100%;
-    border-radius: 2rem;
+    border-radius: 10rem;
     position: absolute;
     backface-visibility: hidden;
 }
