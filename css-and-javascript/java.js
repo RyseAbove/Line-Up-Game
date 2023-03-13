@@ -346,6 +346,7 @@ let dieresult;
 function diefunc() {
     if (rollopt == false) {
         return;
+        console.log(turndata[0]);
     }
     else {
         let prob;
@@ -353,7 +354,11 @@ function diefunc() {
             if (turndata[i] == true) {
                 prob = i;
             }
+            else{
+                return;
+            }
         }
+        console.log(prob)
         if (prob == 0) {
             roller();
             if (dieresult == 0) {
@@ -424,15 +429,9 @@ function roller() {
 // Coin
 
 function flipCoin() {
-    x = (Math.floor(Math.random() * 2));
-    if (x <= 1) {
-        document.getElementById('side-a');
-    } else {
-        document.getElementById('side-b');
-    }
-
     let i = 1 + (Math.floor(Math.random() * 10));
-    document.getElementById("coin").style.transform = 'rotate(' + String(i * 30) + ')';
+
+    document.getElementById("coin").style.transform = 'rotate(' + String(i * 3.1415) + ')';
 
     console.log(i);
 }
