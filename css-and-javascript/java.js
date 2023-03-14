@@ -374,7 +374,7 @@ function diefunc() {
         }
         else if (prob == 2) {
             roller();
-            if (dieresult == 0 || dieresult ==  1 || dieresult ==  2) {
+            if (dieresult == 0 || dieresult == 1 || dieresult == 2) {
                 addpoint();
             }
             else {
@@ -384,7 +384,7 @@ function diefunc() {
         }
         else if (prob == 3) {
             roller();
-            if (dieresult == 0 || dieresult ==  1 || dieresult ==  2 || dieresult ==  3) {
+            if (dieresult == 0 || dieresult == 1 || dieresult == 2 || dieresult == 3) {
                 addpoint();
             }
             else {
@@ -394,7 +394,7 @@ function diefunc() {
         }
         else if (prob == 4) {
             roller();
-            if (dieresult == 0 || dieresult ==  1 || dieresult ==  2 || dieresult ==  3 || dieresult ==  4) {
+            if (dieresult == 0 || dieresult == 1 || dieresult == 2 || dieresult == 3 || dieresult == 4) {
                 addpoint();
             }
             else {
@@ -427,30 +427,3 @@ function flipCoin() {
 
 // Dice
 
-// function rollDice() {
-//     const dice = [...document.querySelectorAll(".die-list")];
-//     dice.forEach(die => {
-//         toggleClasses(die);
-//         die.dataset.roll = getRandomNumber(1, 6);
-//     });
-// }
-
-// function toggleClasses(die) {
-//     die.classList.toggle("odd-roll")
-//     die.classList.toggle("even-roll");
-// }
-
-// function getRandomNumber(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-
-// window.addEventListener('DOMContentLoaded', function() {
-
-// const btn = document.querySelector('#roll-button');
-// btn.addEventListener('click', rollDice);
-
-// });
-
-// document.getElementById("#roll-button").addEventListener("click", rollDice);

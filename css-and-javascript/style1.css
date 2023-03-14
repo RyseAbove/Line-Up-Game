@@ -1,7 +1,7 @@
 /* HOME PAGE */
 
 .singleplayer-button,
-.multiplayer-button, 
+.multiplayer-button,
 .rules-button {
     border: 0.1vw solid black;
     border-radius: 3.5rem;
@@ -9,8 +9,8 @@
     padding-bottom: 1vw;
     margin-top: 1.4vw;
     font-size: 4vw;
-    width: 20vw;
-    height: 3vw;
+    width: 25vw;
+    height: 2.7vw;
     text-align: center;
     background-color: rgba(255, 255, 255, .5);
 }
@@ -72,6 +72,10 @@
 
 /* RULES */
 
+.rules-title {
+    font-size: 2.5vw;
+}
+
 .rules {
     margin-top: 3vw;
     margin-bottom: 3vw;
@@ -79,17 +83,17 @@
     margin-right: 10vw;
 }
 
-.rules > p{
+.rules>p {
     padding-left: 2vw;
 }
 
-.rules > h2{
+.rules>h2 {
     padding-left: 2vw;
 }
 
 /* Misc. */
 
-.rules-header {
+.header {
     display: flex;
     justify-content: center;
 }
@@ -177,7 +181,7 @@ body {
     background-color: #8ca8d1;
     background-image: url(/images/circles.png);
     /* background-image: url(/images/diamond-upholstery.png); */
-    
+
 
     background-color: grey;
     background-image: url("/images/diamond-upholstery.png");
