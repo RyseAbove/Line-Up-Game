@@ -102,7 +102,6 @@ function placefunc(event) {
                 rollfuncl4();
                 rollfuncl5();
                 rollfuncl6();
-                console.log(turndata);
                 tellfunc();
 
                 if (((gamecheck.length + 1) / 2) % 1 == 0) {
@@ -132,7 +131,6 @@ function fillarr() {
         let m = 0;
         prearr[clist[i][m]][clist[i][m + 1]] = clist[i][m + 2];
     }
-    console.log(prearr);
 }
 
 function cfunc() {
@@ -346,7 +344,6 @@ let dieresult;
 function diefunc() {
     if (rollopt == false) {
         return;
-        console.log(turndata[0]);
     }
     else {
         let prob;
@@ -354,11 +351,7 @@ function diefunc() {
             if (turndata[i] == true) {
                 prob = i;
             }
-            else{
-                return;
-            }
         }
-        console.log(prob)
         if (prob == 0) {
             roller();
             if (dieresult == 0) {
@@ -371,7 +364,7 @@ function diefunc() {
         }
         else if (prob == 1) {
             roller();
-            if (dieresult == (0 || 1)) {
+            if (dieresult == 0 || dieresult == 1) {
                 addpoint();
             }
             else {
@@ -381,7 +374,7 @@ function diefunc() {
         }
         else if (prob == 2) {
             roller();
-            if (dieresult == (0 || 1 || 2)) {
+            if (dieresult == 0 || dieresult ==  1 || dieresult ==  2) {
                 addpoint();
             }
             else {
@@ -391,7 +384,7 @@ function diefunc() {
         }
         else if (prob == 3) {
             roller();
-            if (dieresult == (0 || 1 || 2 || 3)) {
+            if (dieresult == 0 || dieresult ==  1 || dieresult ==  2 || dieresult ==  3) {
                 addpoint();
             }
             else {
@@ -401,7 +394,7 @@ function diefunc() {
         }
         else if (prob == 4) {
             roller();
-            if (dieresult == (0 || 1 || 2 || 3 || 4)) {
+            if (dieresult == 0 || dieresult ==  1 || dieresult ==  2 || dieresult ==  3 || dieresult ==  4) {
                 addpoint();
             }
             else {
@@ -423,17 +416,13 @@ function addpoint() {
 
 function roller() {
     dieresult = Math.floor(Math.random() * 6);
-    console.log(dieresult)
 }
 
 // Coin
 
 function flipCoin() {
     let i = 1 + (Math.floor(Math.random() * 10));
-
     document.getElementById("coin").style.transform = 'rotate(' + String(i * 3.1415) + ')';
-
-    console.log(i);
 }
 
 // Dice
