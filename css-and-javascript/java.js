@@ -407,11 +407,10 @@ function diefunc() {
 }
 
 function addpoint() {
-    points[precolor] += 1;
-    document.getElementById("point-red").innerHTML = points[0];
-    document.getElementById("point-blue").innerHTML = points[1];
-
-    document.getElementById("pos").innerHTML = ("Point Gained")
+    points[precolor]++;
+    [0, 1].forEach((x) => document.getElementById("point-" + ['red', 'blue'][x]).innerHTML = points[x]);
+    
+    document.getElementById("pos").innerHTML = "Point Gained";
 }
 
 function roller() {
