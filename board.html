@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css-and-javascript/board-styles.css">
     <link rel="stylesheet" href="css-and-javascript/style1.css">
     <link rel="stylesheet" href="css-and-javascript/dice.css">
-    <script src="css-and-javascript/java.js"></script>
 </head>
 
 
@@ -36,46 +35,47 @@
         <section>
             <div class="roll-die">
                 <h2>Roll</h2>
+                <p id="rolloption"></p>
+                <div class="c3d-bruh">
+                    <div id="c3d">
+                        <div class="item cube-front">
+                            <div class="dot"></div>
+                        </div>
+                        <div class="item cube-right">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="item cube-left">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="item cube-back">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="item cube-top">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="item cube-bottom">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
                 <button id="roll-button" type="button" onclick="diefunc()" onclick="rollDice()">Roll a Die</button>
             </div>
             <p id="pos"></p>
-            <!-- <div class="die">
-                <ol class="die-list" data-roll="1" id="die_1">
-                    <li class="die-item" data-side="1">
-                        <span class="dot"></span>
-                    </li>
-                    <li class="die-item" data-side="2">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </li>
-                    <li class="die-item" data-side="3">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </li>
-                    <li class="die-item" data-side="4">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </li>
-                    <li class="die-item" data-side="5">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </li>
-                    <li class="die-item" data-side="6">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </li>
-                </ol>
-            </div> -->
         </section>
     </div>
     <div class="t-area">
@@ -191,4 +191,5 @@
     <!-- </footer> -->
 
 </body>
+<script src="css-and-javascript/java.js"></script>
 </html>

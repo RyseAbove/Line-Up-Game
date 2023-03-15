@@ -419,10 +419,37 @@ function roller() {
 
 // Coin
 
-// function flipCoin() {
-//     let i = 1 + (Math.floor(Math.random() * 10));
-//     document.getElementById("coin").style.transform = 'rotate(' + String(i * 3.1415) + ')';
-// }
 
-// Dice
+// Dice visual and math
+let die = document.getElementById("c3d");
+
+let noroll = false;
+die.addEventListener("click", function () {
+    if (noroll == true) {
+        return;
+    }
+    else {
+        roller();
+        noroll = true;
+    }
+});
+
+
+let rolledX = (Math.floor(Math.random() * 24) + 1) *90;
+let rolledY = (Math.floor(Math.random() * 24) + 1) *90;
+
+function roller() {
+    let i = 0;
+    let rollinter = setInterval(function () {
+        if (i <= 4000 + 16.667) {
+            die.style.transform = `rotateX(${(i / 4000)*rolledX}deg) rotateY(${(i / 4000)*rolledY}deg)`;
+            i += 16.667;
+        }
+        else {
+            clearInterval(rollinter);
+        }
+    }, 16.667);
+}
+
+
 
