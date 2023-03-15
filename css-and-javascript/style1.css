@@ -7,7 +7,7 @@
     border-radius: 3.5rem;
     padding-top: 1vw;
     padding-bottom: 1vw;
-    margin-top: 1.4vw;
+    margin-top: 1.2vw;
     font-size: 4vw;
     width: 25vw;
     height: 2.7vw;
@@ -20,7 +20,7 @@
 }
 
 .index-header {
-    margin-top: 4vw;
+    margin-top: 0.75vw;
     display: flex;
     justify-content: center;
     align-items: center;
