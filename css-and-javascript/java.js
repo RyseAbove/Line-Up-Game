@@ -419,10 +419,10 @@ function roller() {
 
 // Coin
 
-function flipCoin() {
-    let i = 1 + (Math.floor(Math.random() * 10));
-    document.getElementById("coin").style.transform = 'rotate(' + String(i * 3.1415) + ')';
-}
+// function flipCoin() {
+//     let i = 1 + (Math.floor(Math.random() * 10));
+//     document.getElementById("coin").style.transform = 'rotate(' + String(i * 3.1415) + ')';
+// }
 
 // Dice
 
