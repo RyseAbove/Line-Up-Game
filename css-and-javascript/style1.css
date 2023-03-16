@@ -173,20 +173,8 @@ body {
 }
 
 .background-image {
-
-    background-color: #9e9e9e;
-    background-image: url("/images/brushed-alum.png");
-
-    /* background-color: #256dfdc5; */
-    /* background-image: url("/images/cubes.png"); */
-    background-color: #8ca8d1;
-    background-image: url(/images/circles.png);
-    /* background-image: url(/images/diamond-upholstery.png); */
-
-
     background-color: grey;
     background-image: url("/images/diamond-upholstery.png");
-
 }
 
 header {
