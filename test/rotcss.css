@@ -1,5 +1,10 @@
 /* coin */
 
+.coin-section {
+    display: flex;
+    justify-content: center;
+}
+
 #rot {
     margin-top: 20vw;
     width: 8vw;
