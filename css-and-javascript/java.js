@@ -417,9 +417,6 @@ function roller() {
     dieresult = Math.floor(Math.random() * 6);
 }
 
-// Coin
-
-
 // Dice visual and math
 
 let die = document.getElementById("c3d");
@@ -547,5 +544,3 @@ function numcheck() {
             break;
     }
 }
-
-
