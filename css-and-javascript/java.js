@@ -409,7 +409,7 @@ function diefunc() {
 function addpoint() {
     points[precolor]++;
     [0, 1].forEach((x) => document.getElementById("point-" + ['red', 'blue'][x]).innerHTML = points[x]);
-    
+
     document.getElementById("pos").innerHTML = "Point Gained";
 }
 
@@ -447,28 +447,28 @@ let realX = 0;
 let realY = 0;
 
 
-function getRandom(){
+function getRandom() {
     rolledX = (Math.floor(Math.random() * 24) + 1);
     rolledY = (Math.floor(Math.random() * 24) + 1);
 }
 
 function roller() {
     let i = 0;
-    realX = rolledX+initX;
-    realY = rolledY+initY;
-    for(let i = 0; i < faces.length; i++){
+    realX = rolledX + initX;
+    realY = rolledY + initY;
+    for (let i = 0; i < faces.length; i++) {
         faces[i].style.backgroundColor = "rgba(255 , 255, 255, 0.5)";
     }
     let rollinter = setInterval(function () {
         if (i <= 2000 + 16.667) {
-            die.style.transform = `rotateX(${(initX*90) + (i / 2000)*rolledX*90}deg) rotateY(${(initY*90) + (i / 2000)*rolledY*90}deg)`;
+            die.style.transform = `rotateX(${(initX * 90) + (i / 2000) * rolledX * 90}deg) rotateY(${(initY * 90) + (i / 2000) * rolledY * 90}deg)`;
             i += 16.667;
             noroll = true;
         }
         else {
             initX = rolledX;
             initY = rolledY;
-            for(let i = 0; i < faces.length; i++){
+            for (let i = 0; i < faces.length; i++) {
                 faces[i].style.backgroundColor = "rgba(255 , 255, 255, 1)";
             }
             numcheck();
@@ -478,74 +478,74 @@ function roller() {
     }, 16.667);
 }
 
-function numcheck(){
-        switch(true){
-            case(realY%4 == 0):
-                switch(true){
-                    case(realX%4 == 0):
-                        console.log("1");
-                        break;
-                    case(realX%4 == 1):
-                        console.log("4")
-                        break;
-                    case(realX%4 == 2):
-                        console.log("6")
-                        break;
-                    case(realX%4 == 3):
-                        console.log("2")
-                        break;
-                        
-                }
-                break;
-            case((realY%4 == 1)):
-                switch(true){
-                    case(realX%4 == 0):
-                        console.log("5");
-                        break;
-                    case(realX%4 == 1):
-                        console.log("4")
-                        break;
-                    case(realX%4 == 2):
-                        console.log("3")
-                        break;
-                    case(realX%4 == 3):
-                        console.log("2")
-                        break;
-                }
-                break;
-            case((realY%4 == 2)):
-                switch(true){
-                    case(realX%4 == 0):
-                        console.log("6");
-                        break;
-                    case(realX%4 == 1):
-                        console.log("4")
-                        break;
-                    case(realX%4 == 2):
-                        console.log("1")
-                        break;
-                    case(realX%4 == 3):
-                        console.log("2")
-                        break;
-                }
-                break;
-            case((realY%4 == 3)):
-                switch(true){
-                    case(realX%4 == 0):
-                        console.log("3");
-                        break;
-                    case(realX%4 == 1):
-                        console.log("4")
-                        break;
-                    case(realX%4 == 2):
-                        console.log("5")
-                        break;
-                    case(realX%4 == 3):
-                        console.log("2")
-                        break;
-                }
-                break;
-        }
+function numcheck() {
+    switch (true) {
+        case (realY % 4 == 0):
+            switch (true) {
+                case (realX % 4 == 0):
+                    console.log("1");
+                    break;
+                case (realX % 4 == 1):
+                    console.log("4")
+                    break;
+                case (realX % 4 == 2):
+                    console.log("6")
+                    break;
+                case (realX % 4 == 3):
+                    console.log("2")
+                    break;
+
+            }
+            break;
+        case ((realY % 4 == 1)):
+            switch (true) {
+                case (realX % 4 == 0):
+                    console.log("5");
+                    break;
+                case (realX % 4 == 1):
+                    console.log("4")
+                    break;
+                case (realX % 4 == 2):
+                    console.log("3")
+                    break;
+                case (realX % 4 == 3):
+                    console.log("2")
+                    break;
+            }
+            break;
+        case ((realY % 4 == 2)):
+            switch (true) {
+                case (realX % 4 == 0):
+                    console.log("6");
+                    break;
+                case (realX % 4 == 1):
+                    console.log("4")
+                    break;
+                case (realX % 4 == 2):
+                    console.log("1")
+                    break;
+                case (realX % 4 == 3):
+                    console.log("2")
+                    break;
+            }
+            break;
+        case ((realY % 4 == 3)):
+            switch (true) {
+                case (realX % 4 == 0):
+                    console.log("3");
+                    break;
+                case (realX % 4 == 1):
+                    console.log("4")
+                    break;
+                case (realX % 4 == 2):
+                    console.log("5")
+                    break;
+                case (realX % 4 == 3):
+                    console.log("2")
+                    break;
+            }
+            break;
     }
+}
 
 
