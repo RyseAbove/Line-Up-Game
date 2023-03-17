@@ -30,13 +30,14 @@
 }
 
 .c3d-bruh {
-    width: 40vw;
-    height: 10vw;
+    width: 100%;
+    height: 20vw;
     display: flex;
     justify-content: space-around;
 }
 
 #c3d {
+    margin-top: 7vw;
     height: 6vw;
     width: 6vw;
     transform-style: preserve-3d;

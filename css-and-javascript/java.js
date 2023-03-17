@@ -421,7 +421,10 @@ function roller() {
 
 
 // Dice visual and math
+
 let die = document.getElementById("c3d");
+
+let face = document.getElementsByClassName("item");
 
 let noroll = false;
 die.addEventListener("click", function () {
@@ -429,27 +432,116 @@ die.addEventListener("click", function () {
         return;
     }
     else {
+        getRandom();
         roller();
-        noroll = true;
     }
 });
 
 
-let rolledX = (Math.floor(Math.random() * 24) + 1) *90;
-let rolledY = (Math.floor(Math.random() * 24) + 1) *90;
+let rolledX;
+let rolledY;
+let prevX = 0;
+let prevY = 0;
+let fullX = (rolledX + prevX);
+let fullY = (rolledY + prevY);
+
+function getRandom(){
+    rolledX = (Math.floor(Math.random() * 23)+1);
+    rolledY = (Math.floor(Math.random() * 23)+1);
+    fullX = (rolledX + prevX);
+    fullY = (rolledY + prevY);
+}
 
 function roller() {
     let i = 0;
     let rollinter = setInterval(function () {
-        if (i <= 4000 + 16.667) {
-            die.style.transform = `rotateX(${(i / 4000)*rolledX}deg) rotateY(${(i / 4000)*rolledY}deg)`;
+        for(let i = 0; i < face.length; i++){
+            face[i].style.backgroundColor = "rgba(255, 255, 255, 0.5)"; 
+        }
+        if (i <= 2000 + 16.667) {
+            die.style.transform = `rotateX(${prevX*90 + (i / 2000)*rolledX*90}deg) rotateY(${prevY*90 + (i / 2000)*rolledY*90}deg)`;
             i += 16.667;
+            noroll = true;
         }
         else {
+            for(let i = 0; i < face.length; i++){
+                face[i].style.backgroundColor = "rgba(255, 255, 255, 1)"; 
+            }
+            prevX += rolledX;
+            prevY += rolledY;
+            numcheck();
             clearInterval(rollinter);
+            noroll = false;
         }
     }, 16.667);
 }
 
-
-
+function numcheck(){
+        switch(true){
+            case(fullY%4 == 0):
+                switch(true){
+                    case(fullX%4 == 0):
+                        console.log("1");
+                        break;
+                    case(fullX%4 == 1):
+                        console.log("4")
+                        break;
+                    case(fullX%4 == 2):
+                        console.log("6")
+                        break;
+                    case(fullX%4 == 3):
+                        console.log("2")
+                        break;
+                        
+                }
+                break;
+            case((fullY%4 == 1)):
+                switch(true){
+                    case(fullX%4 == 0):
+                        console.log("5");
+                        break;
+                    case(fullX%4 == 1):
+                        console.log("4")
+                        break;
+                    case(fullX%4 == 2):
+                        console.log("3")
+                        break;
+                    case(fullX%4 == 3):
+                        console.log("2")
+                        break;
+                }
+                break;
+            case((fullY%4 == 2)):
+                switch(true){
+                    case(fullX%4 == 0):
+                        console.log("6");
+                        break;
+                    case(fullX%4 == 1):
+                        console.log("4")
+                        break;
+                    case(fullX%4 == 2):
+                        console.log("1")
+                        break;
+                    case(fullX%4 == 3):
+                        console.log("2")
+                        break;
+                }
+                break;
+            case((fullY%4 == 3)):
+                switch(true){
+                    case(fullX%4 == 0):
+                        console.log("3");
+                        break;
+                    case(fullX%4 == 1):
+                        console.log("4")
+                        break;
+                    case(fullX%4 == 2):
+                        console.log("5")
+                        break;
+                    case(fullX%4 == 3):
+                        console.log("2")
+                        break;
+                }
+                break;
+        }
+    }
