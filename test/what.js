@@ -6,10 +6,10 @@ let rotobj = document.getElementById("rot");
 let noclick = true;
 
 let heads = document.createElement("img");
-heads.src = "quarter-heads.png";
+heads.src = "test/quarter-heads.png";
 
 let tails = document.createElement("img");
-tails.src = "quarter-tails.png";
+tails.src = "test/quarter-tails.png";
 
 
 heads.setAttribute("id", "heads")
@@ -20,12 +20,18 @@ let headclear = false;
 
 let tailclear = false;
 
+
+function pageload(){
+    location.href = "board.html";
+}
+
 rotobj.addEventListener("click", function () {
     if (noclick == true) {
         document.getElementById("heads").remove();
         rotfunc();
     }
 });
+
 
 
 function rotfunc() {
@@ -39,6 +45,7 @@ function rotfunc() {
         }
         else {
             clearInterval(inter);
+            let timeout = setTimeout(pageload, 1000) 
         }
         if ((Math.floor((i + 500) / 1000) % 2 == 1)) {
             rotobj.appendChild(tails);
@@ -58,6 +65,7 @@ function rotfunc() {
         }
     }, 16.67);
 }
+
 
 
 //die

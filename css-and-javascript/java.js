@@ -421,7 +421,10 @@ function roller() {
 
 
 // Dice visual and math
+
 let die = document.getElementById("c3d");
+
+let face = document.getElementsByClassName("item");
 
 let noroll = false;
 die.addEventListener("click", function () {
