@@ -34,13 +34,8 @@ let rollopt;
 
 let points = [0, 0];
 
-
-//placement
-
 let color = "red";
 let fill = "#EE5151";
-
-
 
 /*hovering premove*/
 
@@ -73,7 +68,7 @@ function remove(event) {
     }
 }
 
-
+// Placing checkers
 function placefunc(event) {
     if (rollopt == true) {
         return;
@@ -120,7 +115,22 @@ function placefunc(event) {
     }
 }
 
+// Computer Opponent
+
+// if (color == 'blue') {
+//     for (let i = 0; i < (boolarr.length - 1); i++) {
+//         for (let m = 0; m < boolarr[i].length; m++) {
+//             if (boolar[i][m] == 'e') {
+//                 switch (true) {
+//                     case (boolar[i] + [m]): 
+//                 }
+//             }
+//         }
+//     }
+// }
+
 /*filling prearr*/
+
 function prefill(x, y, z) {
     clist.push([x, y, z]);
     fillarr();
@@ -318,7 +328,7 @@ function rollfuncl6() {
         for (let m = 0; m < (boolarr[i].length - 5); m++) {
             if (boolarr[i][m] != 'e') {
                 if (((boolarr[i][m] == boolarr[i][m + 1]) && (boolarr[i][m] == boolarr[i][m + 2]) && (boolarr[i][m] == boolarr[i][m + 3]) && (boolarr[i][m] == boolarr[i][m + 4]) && (boolarr[i][m] == boolarr[i][m + 5])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i][m + 1] != prearr[i][m + 1]) || (boolarr[i][m + 2] != prearr[i][m + 2]) || (boolarr[i][m + 3] != prearr[i][m + 3]) || (boolarr[i][m + 4] != prearr[i][m + 4]) || (boolarr[i][m + 5] != prearr[i][m + 5]))) {
-                    turndata[4] = true; 
+                    turndata[4] = true;
                 }
             }
         }
@@ -350,7 +360,7 @@ let die = document.getElementById("c3d-1");
 
 let face = document.getElementsByClassName("item-1");
 
-function roller(){
+function roller() {
     die.addEventListener("click", function () {
         if (noroll == false) {
             return;
@@ -372,9 +382,9 @@ let prevY = 0;
 let fullX = (rolledX + prevX);
 let fullY = (rolledY + prevY);
 
-function getRandom(){
-    rolledX = (Math.floor(Math.random() * 23)+1);
-    rolledY = (Math.floor(Math.random() * 23)+1);
+function getRandom() {
+    rolledX = (Math.floor(Math.random() * 23) + 1);
+    rolledY = (Math.floor(Math.random() * 23) + 1);
     fullX = (rolledX + prevX);
     fullY = (rolledY + prevY);
 }
@@ -382,16 +392,16 @@ function getRandom(){
 function rolldie() {
     let i = 0;
     let rollinter = setInterval(function () {
-        for(let i = 0; i < face.length; i++){
-            face[i].style.backgroundColor = "rgba(255, 255, 255, 0.5)"; 
+        for (let i = 0; i < face.length; i++) {
+            face[i].style.backgroundColor = "rgba(255, 255, 255, 0.5)";
         }
         if (i <= 1000 + 16.667) {
-            die.style.transform = `rotateX(${prevX*90 + (i / 1000)*rolledX*90}deg) rotateY(${prevY*90 + (i / 1000)*rolledY*90}deg)`;
+            die.style.transform = `rotateX(${prevX * 90 + (i / 1000) * rolledX * 90}deg) rotateY(${prevY * 90 + (i / 1000) * rolledY * 90}deg)`;
             i += 16.667;
         }
         else {
-            for(let i = 0; i < face.length; i++){
-                face[i].style.backgroundColor = "rgba(255, 255, 255, 1)"; 
+            for (let i = 0; i < face.length; i++) {
+                face[i].style.backgroundColor = "rgba(255, 255, 255, 1)";
             }
             prevX += rolledX;
             prevY += rolledY;
@@ -402,143 +412,141 @@ function rolldie() {
     }, 16.667);
 }
 
-function numcheck(){
-        switch(true){
-            case(fullY%4 == 0):
-                switch(true){
-                    case(fullX%4 == 0):
-                        dieresult = 0;
-                        break;
-                    case(fullX%4 == 1):
-                        dieresult = 3;
-                        break;
-                    case(fullX%4 == 2):
-                        dieresult = 5;
-                        break;
-                    case(fullX%4 == 3):
-                        dieresult = 1;
-                        break;
-                        
-                }
-                break;
-            case((fullY%4 == 1)):
-                switch(true){
-                    case(fullX%4 == 0):
-                        dieresult = 4;;
-                        break;
-                    case(fullX%4 == 1):
-                        dieresult = 3;
-                        break;
-                    case(fullX%4 == 2):
-                        dieresult = 2;
-                        break;
-                    case(fullX%4 == 3):
-                        dieresult = 1;
-                        break;
-                }
-                break;
-            case((fullY%4 == 2)):
-                switch(true){
-                    case(fullX%4 == 0):
-                        dieresult = 5;;
-                        break;
-                    case(fullX%4 == 1):
-                        dieresult = 3;
-                        break;
-                    case(fullX%4 == 2):
-                        dieresult = 0;
-                        break;
-                    case(fullX%4 == 3):
-                        dieresult = 1;
-                        break;
-                }
-                break;
-            case((fullY%4 == 3)):
-                switch(true){
-                    case(fullX%4 == 0):
-                        dieresult = 2;;
-                        break;
-                    case(fullX%4 == 1):
-                        dieresult = 3;
-                        break;
-                    case(fullX%4 == 2):
-                        dieresult = 4;
-                        break;
-                    case(fullX%4 == 3):
-                        dieresult = 1;
-                        break;
-                }
-                break;
-        }
+function numcheck() {
+    switch (true) {
+        case (fullY % 4 == 0):
+            switch (true) {
+                case (fullX % 4 == 0):
+                    dieresult = 0;
+                    break;
+                case (fullX % 4 == 1):
+                    dieresult = 3;
+                    break;
+                case (fullX % 4 == 2):
+                    dieresult = 5;
+                    break;
+                case (fullX % 4 == 3):
+                    dieresult = 1;
+                    break;
+
+            }
+            break;
+        case ((fullY % 4 == 1)):
+            switch (true) {
+                case (fullX % 4 == 0):
+                    dieresult = 4;;
+                    break;
+                case (fullX % 4 == 1):
+                    dieresult = 3;
+                    break;
+                case (fullX % 4 == 2):
+                    dieresult = 2;
+                    break;
+                case (fullX % 4 == 3):
+                    dieresult = 1;
+                    break;
+            }
+            break;
+        case ((fullY % 4 == 2)):
+            switch (true) {
+                case (fullX % 4 == 0):
+                    dieresult = 5;;
+                    break;
+                case (fullX % 4 == 1):
+                    dieresult = 3;
+                    break;
+                case (fullX % 4 == 2):
+                    dieresult = 0;
+                    break;
+                case (fullX % 4 == 3):
+                    dieresult = 1;
+                    break;
+            }
+            break;
+        case ((fullY % 4 == 3)):
+            switch (true) {
+                case (fullX % 4 == 0):
+                    dieresult = 2;;
+                    break;
+                case (fullX % 4 == 1):
+                    dieresult = 3;
+                    break;
+                case (fullX % 4 == 2):
+                    dieresult = 4;
+                    break;
+                case (fullX % 4 == 3):
+                    dieresult = 1;
+                    break;
+            }
+            break;
     }
+}
 
 let dieresult;
 
 function diecheck() {
-        let prob;
-        for (let i = 0; i < turndata.length; i++) {
-            if (turndata[i] == true) {
-                prob = i;
-            }
+    let prob;
+    for (let i = 0; i < turndata.length; i++) {
+        if (turndata[i] == true) {
+            prob = i;
         }
-        if (prob == 0) {
-            roller();
-            if (dieresult == 0) {
-                addpoint();
-            }
-            else {
-                document.getElementById("pos").innerHTML = "No point gained"
-            }
-            rollopt = false;
+    }
+    if (prob == 0) {
+        roller();
+        if (dieresult == 0) {
+            addpoint();
         }
-        else if (prob == 1) {
-            roller();
-            if (dieresult == 0 || dieresult == 1) {
-                addpoint();
-            }
-            else {
-                document.getElementById("pos").innerHTML = "No point gained"
-            }
-            rollopt = false;
+        else {
+            document.getElementById("pos").innerHTML = "No point gained"
         }
-        else if (prob == 2) {
-            roller();
-            if (dieresult == 0 || dieresult == 1 || dieresult == 2) {
-                addpoint();
-            }
-            else {
-                document.getElementById("pos").innerHTML = "No point gained"
-            }
-            rollopt = false;
+        rollopt = false;
+    }
+    else if (prob == 1) {
+        roller();
+        if (dieresult == 0 || dieresult == 1) {
+            addpoint();
         }
-        else if (prob == 3) {
-            roller();
-            if (dieresult == 0 || dieresult == 1 || dieresult == 2 || dieresult == 3) {
-                addpoint();
-            }
-            else {
-                document.getElementById("pos").innerHTML = "No point gained"
-            }
-            rollopt = false;
+        else {
+            document.getElementById("pos").innerHTML = "No point gained"
         }
-        else if (prob == 4) {
-            roller();
-            if (dieresult == 0 || dieresult == 1 || dieresult == 2 || dieresult == 3 || dieresult == 4) {
-                addpoint();
-            }
-            else {
-                document.getElementById("pos").innerHTML = "No point gained"
-            }
-            rollopt = false;
+        rollopt = false;
+    }
+    else if (prob == 2) {
+        roller();
+        if (dieresult == 0 || dieresult == 1 || dieresult == 2) {
+            addpoint();
         }
+        else {
+            document.getElementById("pos").innerHTML = "No point gained"
+        }
+        rollopt = false;
+    }
+    else if (prob == 3) {
+        roller();
+        if (dieresult == 0 || dieresult == 1 || dieresult == 2 || dieresult == 3) {
+            addpoint();
+        }
+        else {
+            document.getElementById("pos").innerHTML = "No point gained"
+        }
+        rollopt = false;
+    }
+    else if (prob == 4) {
+        roller();
+        if (dieresult == 0 || dieresult == 1 || dieresult == 2 || dieresult == 3 || dieresult == 4) {
+            addpoint();
+        }
+        else {
+            document.getElementById("pos").innerHTML = "No point gained"
+        }
+        rollopt = false;
+    }
 }
 
 function addpoint() {
     points[precolor]++;
     [0, 1].forEach((x) => document.getElementById("point-" + ['red', 'blue'][x]).innerHTML = points[x]);
-    
+
     document.getElementById("pos").innerHTML = "Point Gained";
 }
-
-// Computer Opponent
 
