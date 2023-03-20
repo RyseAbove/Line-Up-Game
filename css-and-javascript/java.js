@@ -157,7 +157,7 @@ function rollfuncl2() {
             }
         }
     }
-    for (let i = 0; i < boolarr.length - 1; i++) {//fix
+    for (let i = 0; i < boolarr.length - 1; i++) {
         for (let m = 1; m < boolarr[i].length; m++) {
             if (boolarr[i][m] != 'e') {
                 if ((boolarr[i][m] == boolarr[i + 1][m - 1]) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i + 1][m - 1] != prearr[i + 1][m - 1]))) {
@@ -194,7 +194,7 @@ function rollfuncl3() {
             }
         }
     }
-    for (let i = 0; i < (boolarr.length - 2); i++) {//fix
+    for (let i = 0; i < (boolarr.length - 2); i++) {
         for (let m = 2; m < boolarr[i].length; m++) {
             if (boolarr[i][m] != 'e') {
                 if (((boolarr[i][m] == boolarr[i + 1][m - 1]) && (boolarr[i][m] == boolarr[i + 2][m - 2])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i + 1][m - 1] != prearr[i + 1][m - 1]) || (boolarr[i + 2][m - 2] != prearr[i + 2][m - 2]))) {
@@ -231,7 +231,7 @@ function rollfuncl4() {
             }
         }
     }
-    for (let i = 0; i < boolarr.length - 3; i++) {//fix
+    for (let i = 0; i < boolarr.length - 3; i++) {
         for (let m = 3; m < boolarr[i].length; m++) {
             if (boolarr[i][m] != 'e') {
                 if (((boolarr[i][m] == boolarr[i + 1][m - 1]) && (boolarr[i][m] == boolarr[i + 2][m - 2]) && (boolarr[i][m] == boolarr[i + 3][m - 3])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i + 1][m - 1] != prearr[i + 1][m - 1]) || (boolarr[i + 2][m - 2] != prearr[i + 2][m - 2]) || (boolarr[i + 3][m - 3] != prearr[i + 3][m - 3]))) {
@@ -268,7 +268,7 @@ function rollfuncl5() {
             }
         }
     }
-    for (let i = 0; i < boolarr.length - 4; i++) {//fix
+    for (let i = 0; i < boolarr.length - 4; i++) {
         for (let m = 4; m < boolarr[i].length; m++) {
             if (boolarr[i][m] != 'e') {
                 if (((boolarr[i][m] == boolarr[i + 1][m - 1]) && (boolarr[i][m] == boolarr[i + 2][m - 2]) && (boolarr[i][m] == boolarr[i + 3][m - 3]) && (boolarr[i][m] == boolarr[i + 4][m - 4])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i + 1][m - 1] != prearr[i + 1][m - 1]) || (boolarr[i + 2][m - 2] != prearr[i + 2][m - 2]) || (boolarr[i + 3][m - 3] != prearr[i + 3][m - 3]) || (boolarr[i + 4][m - 4] != prearr[i + 4][m - 4]))) {
@@ -305,7 +305,7 @@ function rollfuncl6() {
             }
         }
     }
-    for (let i = 0; i < boolarr.length - 5; i++) {//fix
+    for (let i = 0; i < boolarr.length - 5; i++) {
         for (let m = 5; m < boolarr[i].length; m++) {
             if (boolarr[i][m] != 'e') {
                 if (((boolarr[i][m] == boolarr[i + 1][m - 1]) && (boolarr[i][m] == boolarr[i + 2][m - 2]) && (boolarr[i][m] == boolarr[i + 3][m - 3]) && (boolarr[i][m] == boolarr[i + 4][m - 4]) && (boolarr[i][m] == boolarr[i + 5][m - 5])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i + 1][m - 1] != prearr[i + 1][m - 1]) || (boolarr[i + 2][m - 2] != prearr[i + 2][m - 2]) || (boolarr[i + 3][m - 3] != prearr[i + 3][m - 3]) || (boolarr[i + 4][m - 4] != prearr[i + 4][m - 4]) || (boolarr[i + 5][m - 5] != prearr[i + 5][m - 5]))) {
@@ -318,19 +318,24 @@ function rollfuncl6() {
         for (let m = 0; m < (boolarr[i].length - 5); m++) {
             if (boolarr[i][m] != 'e') {
                 if (((boolarr[i][m] == boolarr[i][m + 1]) && (boolarr[i][m] == boolarr[i][m + 2]) && (boolarr[i][m] == boolarr[i][m + 3]) && (boolarr[i][m] == boolarr[i][m + 4]) && (boolarr[i][m] == boolarr[i][m + 5])) && ((boolarr[i][m] != prearr[i][m]) || (boolarr[i][m + 1] != prearr[i][m + 1]) || (boolarr[i][m + 2] != prearr[i][m + 2]) || (boolarr[i][m + 3] != prearr[i][m + 3]) || (boolarr[i][m + 4] != prearr[i][m + 4]) || (boolarr[i][m + 5] != prearr[i][m + 5]))) {
-                    turndata[4] = true;
+                    turndata[4] = true; 
                 }
             }
         }
     }
 }
 
+//dice sequence
+
+let noroll = false;
 
 function tellfunc() {
     for (let i = 0; i < turndata.length; i++) {
         if (turndata[i] == true) {
             document.getElementById("pos").innerHTML = "A roll is possible";
+            noroll = true;
             rollopt = true;
+            roller();
             break;
         }
         else {
@@ -339,13 +344,137 @@ function tellfunc() {
     }
 }
 
+// Dice visual and math
+
+let die = document.getElementById("c3d-1");
+
+let face = document.getElementsByClassName("item-1");
+
+function roller(){
+    die.addEventListener("click", function () {
+        if (noroll == false) {
+            return;
+        }
+        else {
+            noroll = false;
+            getRandom();
+            rolldie();
+        }
+    });
+}
+
+
+
+let rolledX;
+let rolledY;
+let prevX = 0;
+let prevY = 0;
+let fullX = (rolledX + prevX);
+let fullY = (rolledY + prevY);
+
+function getRandom(){
+    rolledX = (Math.floor(Math.random() * 23)+1);
+    rolledY = (Math.floor(Math.random() * 23)+1);
+    fullX = (rolledX + prevX);
+    fullY = (rolledY + prevY);
+}
+
+function rolldie() {
+    let i = 0;
+    let rollinter = setInterval(function () {
+        for(let i = 0; i < face.length; i++){
+            face[i].style.backgroundColor = "rgba(255, 255, 255, 0.5)"; 
+        }
+        if (i <= 1000 + 16.667) {
+            die.style.transform = `rotateX(${prevX*90 + (i / 1000)*rolledX*90}deg) rotateY(${prevY*90 + (i / 1000)*rolledY*90}deg)`;
+            i += 16.667;
+        }
+        else {
+            for(let i = 0; i < face.length; i++){
+                face[i].style.backgroundColor = "rgba(255, 255, 255, 1)"; 
+            }
+            prevX += rolledX;
+            prevY += rolledY;
+            clearInterval(rollinter);
+            numcheck();
+            diecheck();
+        }
+    }, 16.667);
+}
+
+function numcheck(){
+        switch(true){
+            case(fullY%4 == 0):
+                switch(true){
+                    case(fullX%4 == 0):
+                        dieresult = 0;
+                        break;
+                    case(fullX%4 == 1):
+                        dieresult = 3;
+                        break;
+                    case(fullX%4 == 2):
+                        dieresult = 5;
+                        break;
+                    case(fullX%4 == 3):
+                        dieresult = 1;
+                        break;
+                        
+                }
+                break;
+            case((fullY%4 == 1)):
+                switch(true){
+                    case(fullX%4 == 0):
+                        dieresult = 4;;
+                        break;
+                    case(fullX%4 == 1):
+                        dieresult = 3;
+                        break;
+                    case(fullX%4 == 2):
+                        dieresult = 2;
+                        break;
+                    case(fullX%4 == 3):
+                        dieresult = 1;
+                        break;
+                }
+                break;
+            case((fullY%4 == 2)):
+                switch(true){
+                    case(fullX%4 == 0):
+                        dieresult = 5;;
+                        break;
+                    case(fullX%4 == 1):
+                        dieresult = 3;
+                        break;
+                    case(fullX%4 == 2):
+                        dieresult = 0;
+                        break;
+                    case(fullX%4 == 3):
+                        dieresult = 1;
+                        break;
+                }
+                break;
+            case((fullY%4 == 3)):
+                switch(true){
+                    case(fullX%4 == 0):
+                        dieresult = 2;;
+                        break;
+                    case(fullX%4 == 1):
+                        dieresult = 3;
+                        break;
+                    case(fullX%4 == 2):
+                        dieresult = 4;
+                        break;
+                    case(fullX%4 == 3):
+                        dieresult = 1;
+                        break;
+                }
+                break;
+        }
+    }
+
 let dieresult;
 
-function diefunc() {
-    if (rollopt == false) {
-        return;
-    }
-    else {
+function diecheck() {
         let prob;
         for (let i = 0; i < turndata.length; i++) {
             if (turndata[i] == true) {
@@ -402,145 +531,14 @@ function diefunc() {
             }
             rollopt = false;
         }
-    }
-
 }
 
 function addpoint() {
     points[precolor]++;
     [0, 1].forEach((x) => document.getElementById("point-" + ['red', 'blue'][x]).innerHTML = points[x]);
-
+    
     document.getElementById("pos").innerHTML = "Point Gained";
 }
 
-function roller() {
-    dieresult = Math.floor(Math.random() * 6);
-}
+// Computer Opponent
 
-// Dice visual and math
-
-let die = document.getElementById("c3d");
-
-let face = document.getElementsByClassName("item");
-
-let noroll = false;
-die.addEventListener("click", function () {
-    if (noroll == true) {
-        return;
-    }
-    else {
-        getRandom();
-        roller();
-    }
-});
-
-let faces = document.getElementsByClassName("item");
-
-let rolledX;
-let rolledY;
-let initX = 0;
-let initY = 0;
-let realX = 0;
-let realY = 0;
-
-
-function getRandom() {
-    rolledX = (Math.floor(Math.random() * 24) + 1);
-    rolledY = (Math.floor(Math.random() * 24) + 1);
-}
-
-function roller() {
-    let i = 0;
-    realX = rolledX + initX;
-    realY = rolledY + initY;
-    for (let i = 0; i < faces.length; i++) {
-        faces[i].style.backgroundColor = "rgba(255 , 255, 255, 0.5)";
-    }
-    let rollinter = setInterval(function () {
-        if (i <= 2000 + 16.667) {
-            die.style.transform = `rotateX(${(initX * 90) + (i / 2000) * rolledX * 90}deg) rotateY(${(initY * 90) + (i / 2000) * rolledY * 90}deg)`;
-            i += 16.667;
-            noroll = true;
-        }
-        else {
-            initX = rolledX;
-            initY = rolledY;
-            for (let i = 0; i < faces.length; i++) {
-                faces[i].style.backgroundColor = "rgba(255 , 255, 255, 1)";
-            }
-            numcheck();
-            clearInterval(rollinter);
-            noroll = false;
-        }
-    }, 16.667);
-}
-
-function numcheck() {
-    switch (true) {
-        case (realY % 4 == 0):
-            switch (true) {
-                case (realX % 4 == 0):
-                    console.log("1");
-                    break;
-                case (realX % 4 == 1):
-                    console.log("4")
-                    break;
-                case (realX % 4 == 2):
-                    console.log("6")
-                    break;
-                case (realX % 4 == 3):
-                    console.log("2")
-                    break;
-
-            }
-            break;
-        case ((realY % 4 == 1)):
-            switch (true) {
-                case (realX % 4 == 0):
-                    console.log("5");
-                    break;
-                case (realX % 4 == 1):
-                    console.log("4")
-                    break;
-                case (realX % 4 == 2):
-                    console.log("3")
-                    break;
-                case (realX % 4 == 3):
-                    console.log("2")
-                    break;
-            }
-            break;
-        case ((realY % 4 == 2)):
-            switch (true) {
-                case (realX % 4 == 0):
-                    console.log("6");
-                    break;
-                case (realX % 4 == 1):
-                    console.log("4")
-                    break;
-                case (realX % 4 == 2):
-                    console.log("1")
-                    break;
-                case (realX % 4 == 3):
-                    console.log("2")
-                    break;
-            }
-            break;
-        case ((realY % 4 == 3)):
-            switch (true) {
-                case (realX % 4 == 0):
-                    console.log("3");
-                    break;
-                case (realX % 4 == 1):
-                    console.log("4")
-                    break;
-                case (realX % 4 == 2):
-                    console.log("5")
-                    break;
-                case (realX % 4 == 3):
-                    console.log("2")
-                    break;
-            }
-            break;
-    }
-}
