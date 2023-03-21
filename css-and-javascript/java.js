@@ -39,95 +39,160 @@ let fill = "#EE5151";
 
 /*hovering premove*/
 
-function premove(event) {
-    let box = event.target;
-    let col = box.parentElement.parentElement.id;
-    let num = parseFloat(col.replace('c', '')) - 1;
-    let first = 0;
-    if (boolarr[num][first] == 'e') {
-        let canvas = document.getElementById(`${num + 1}${first + 1}`);
-        let draw = canvas.getContext("2d");
-        let wid = (top.innerWidth / 100);
-        //( canvas.width/2, canvas.height/2, 2*wid, 0, 2 * Math.PI)
-        draw.ellipse(canvas.width / 2, canvas.height / 2, 4 * wid, 2 * wid, 0, 0, Math.PI * 2)
-        draw.stroke();
-        draw.fillStyle = fill;
-        draw.fill();
-    }
-}
 
-function remove(event) {
-    let box = event.target;
-    let col = box.parentElement.parentElement.id;
-    let num = parseFloat(col.replace('c', '')) - 1;
-    let first = 0;
-    if (boolarr[num][first] == 'e') {
-        let canvas = document.getElementById(`${num + 1}${first + 1}`);
-        let draw = canvas.getContext("2d");
-        draw.clearRect(0, 0, canvas.width, canvas.height);
-    }
-}
+
+
 
 // Placing checkers
-function placefunc(event) {
-    if (rollopt == true) {
-        return;
-    }
-    else {
-        let box = event.target;
-        let col = box.parentElement.parentElement.id;
-        let num = parseFloat(col.replace('c', '')) - 1;
-        for (let i = 7; i >= 0; i--) {
-            if (boolarr[num][i] == 'e') {
-                boolarr[num][i] = color;
-                prefill(num, i, color);
-                let canvas = document.getElementById(`${num + 1}${i + 1}`);
-                let draw = canvas.getContext("2d");
-                let wid = (top.innerWidth / 100);
-                //( canvas.width/2, canvas.height/2, 2*wid, 0, 2 * Math.PI)
-                draw.ellipse(canvas.width / 2, canvas.height / 2, 4 * wid, 2 * wid, 0, 0, Math.PI * 2)
-                draw.stroke();
-                draw.fillStyle = fill;
-                draw.fill();
-                gamecheck.push(color);
 
-                cfunc();
-                rollfuncl2();
-                rollfuncl3();
-                rollfuncl4();
-                rollfuncl5();
-                rollfuncl6();
-                tellfunc();
+let canvelem = document.querySelectorAll('.canvas');
+for (let i = 0; i < canvelem.length; i++) {
+    canvelem[i].addEventListener('click', e => {
+        if (rollopt == true) {
+            return;
+        }
+        else {
+            let box = e.target;
+            let col = box.parentElement.parentElement.id;
+            let num = parseFloat(col.replace('c', '')) - 1;
+            for (let i = 7; i >= 0; i--) {
+                if (boolarr[num][i] == 'e') {
+                    boolarr[num][i] = color;
+                    prefill(num, i, color);
+                    let canvas = document.getElementById(`${num + 1}${i + 1}`);
+                    let draw = canvas.getContext("2d");
+                    let wid = (top.innerWidth / 100);
+                    //( canvas.width/2, canvas.height/2, 2*wid, 0, 2 * Math.PI)
+                    draw.ellipse(canvas.width / 2, canvas.height / 2, 4 * wid, 2 * wid, 0, 0, Math.PI * 2)
+                    draw.stroke();
+                    draw.fillStyle = fill;
+                    draw.fill();
+                    gamecheck.push(color);
 
-                if (((gamecheck.length + 1) / 2) % 1 == 0) {
-                    color = "blue";
-                    precolor = 0;
-                    fill = "#5187EE"
+                    cfunc();
+                    rollfuncl2();
+                    rollfuncl3();
+                    rollfuncl4();
+                    rollfuncl5();
+                    rollfuncl6();
+                    tellfunc();
+
+                    if (((gamecheck.length + 1) / 2) % 1 == 0) {
+                        color = "blue";
+                        precolor = 0;
+                        fill = "#5187EE"
+                    }
+                    else {
+                        color = "red";
+                        precolor = 1;
+                        fill = "#EE5151";
+                    }
+                    break;
                 }
-                else {
-                    color = "red";
-                    precolor = 1;
-                    fill = "#EE5151";
-                }
-                break;
             }
         }
     }
+    );
+}
+
+for (let i = 0; i < canvelem.length; i++) {
+    canvelem[i].addEventListener('mouseover', e => {
+        let box = e.target;
+        let col = box.parentElement.parentElement.id;
+        let num = parseFloat(col.replace('c', '')) - 1;
+        let first = 0;
+        if (boolarr[num][first] == 'e') {
+            let canvas = document.getElementById(`${num + 1}${first + 1}`);
+            let draw = canvas.getContext("2d");
+            let wid = (top.innerWidth / 100);
+            //( canvas.width/2, canvas.height/2, 2*wid, 0, 2 * Math.PI)
+            draw.ellipse(canvas.width / 2, canvas.height / 2, 4 * wid, 2 * wid, 0, 0, Math.PI * 2)
+            draw.stroke();
+            draw.fillStyle = fill;
+            draw.fill();
+        }
+    })
+}
+
+
+
+for (let i = 0; i < canvelem.length; i++) {
+    canvelem[i].addEventListener('mouseleave', e => {
+            let box = e.target;
+            let col = box.parentElement.parentElement.id;
+            let num = parseFloat(col.replace('c', '')) - 1;
+            let first = 0;
+            if (boolarr[num][first] == 'e') {
+                let canvas = document.getElementById(`${num + 1}${first + 1}`);
+                let draw = canvas.getContext("2d");
+                draw.clearRect(0, 0, canvas.width, canvas.height);
+            }
+    })
 }
 
 // Computer Opponent
 
-// if (color == 'blue') {
-//     for (let i = 0; i < (boolarr.length - 1); i++) {
-//         for (let m = 0; m < boolarr[i].length; m++) {
-//             if (boolar[i][m] == 'e') {
-//                 switch (true) {
-//                     case (boolar[i] + [m]): 
-//                 }
-//             }
-//         }
-//     }
-// }
+function aiPlace() {
+    if (color == 'blue') {
+        for (let i = 0; i < (boolarr.length - 1); i++) {
+            for (let m = 0; m < boolarr[i].length; m++) {
+                if (boolarr[i][m] == 'e') {
+                    switch (true) {
+                        case (boolarr[i + 1][m]):
+                            placefunc();
+                        case (boolarr[i + 1][m + 1]):
+                            placefunc();
+                        case (boolarr[i + 1][m - 1]):
+                            placefunc();
+                        case (boolarr[i][m + 1]):
+                            placefunc();
+                        case (boolarr[i + 2][m]):
+                            placefunc();
+                        case (boolarr[i + 2][m + 2]):
+                            placefunc();
+                        case (boolarr[i + 2][m - 2]):
+                            placefunc();
+                        case (boolarr[i][m + 2]):
+                            placefunc();
+                        case (boolarr[i + 3][m]):
+                            placefunc();
+                        case (boolarr[i + 3][m + 3]):
+                            placefunc();
+                        case (boolarr[i + 3][m - 3]):
+                            placefunc();
+                        case (boolarr[i][m + 3]):
+                            placefunc();
+                        case (boolarr[i + 4][m]):
+                            placefunc();
+                        case (boolarr[i + 4][m + 4]):
+                            placefunc();
+                        case (boolarr[i + 4][m - 4]):
+                            placefunc();
+                        case (boolarr[i][m + 4]):
+                            placefunc();
+                        case (boolarr[i + 5][m]):
+                            placefunc();
+                        case (boolarr[i + 5][m + 1]):
+                            placefunc();
+                        case (boolarr[i + 5][m - 5]):
+                            placefunc();
+                        case (boolarr[i][m + 5]):
+                            placefunc();
+                        case (boolarr[i + 6][m]):
+                            placefunc();
+                        case (boolarr[i + 6][m + 6]):
+                            placefunc();
+                        case (boolarr[i + 6][m - 6]):
+                            placefunc();
+                        case (boolarr[i][m + 6]):
+                            placefunc();
+                            break;
+                    }
+                }
+            }
+        }
+    }
+}
 
 /*filling prearr*/
 
@@ -466,7 +531,7 @@ function numcheck() {
         case ((fullY % 4 == 3)):
             switch (true) {
                 case (fullX % 4 == 0):
-                    dieresult = 2;;
+                    dieresult = 2;
                     break;
                 case (fullX % 4 == 1):
                     dieresult = 3;
