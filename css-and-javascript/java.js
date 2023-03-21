@@ -1,3 +1,5 @@
+// board array
+
 let boolarr = [
     ["e", "e", "e", "e", "e", "e", "e", "e"],
     ["e", "e", "e", "e", "e", "e", "e", "e"],
@@ -14,6 +16,8 @@ let boolarr = [
 let gamecheck = []
 
 let clist = []
+
+// premove board array
 
 let prearr = [
     ["e", "e", "e", "e", "e", "e", "e", "e"],
@@ -36,12 +40,6 @@ let points = [0, 0];
 
 let color = "red";
 let fill = "#EE5151";
-
-/*hovering premove*/
-
-
-
-
 
 // Placing checkers
 
@@ -95,6 +93,8 @@ for (let i = 0; i < canvelem.length; i++) {
     );
 }
 
+// hover
+
 for (let i = 0; i < canvelem.length; i++) {
     canvelem[i].addEventListener('mouseover', e => {
         let box = e.target;
@@ -114,7 +114,7 @@ for (let i = 0; i < canvelem.length; i++) {
     })
 }
 
-
+// removes hover
 
 for (let i = 0; i < canvelem.length; i++) {
     canvelem[i].addEventListener('mouseleave', e => {
@@ -139,54 +139,53 @@ function aiPlace() {
                 if (boolarr[i][m] == 'e') {
                     switch (true) {
                         case (boolarr[i + 1][m]):
-                            placefunc();
+                            
                         case (boolarr[i + 1][m + 1]):
-                            placefunc();
+                            
                         case (boolarr[i + 1][m - 1]):
-                            placefunc();
+                            
                         case (boolarr[i][m + 1]):
-                            placefunc();
+                            
                         case (boolarr[i + 2][m]):
-                            placefunc();
+                            
                         case (boolarr[i + 2][m + 2]):
-                            placefunc();
+                            
                         case (boolarr[i + 2][m - 2]):
-                            placefunc();
+                            
                         case (boolarr[i][m + 2]):
-                            placefunc();
+                            
                         case (boolarr[i + 3][m]):
-                            placefunc();
+                            
                         case (boolarr[i + 3][m + 3]):
-                            placefunc();
+                            
                         case (boolarr[i + 3][m - 3]):
-                            placefunc();
+                            
                         case (boolarr[i][m + 3]):
-                            placefunc();
+                            
                         case (boolarr[i + 4][m]):
-                            placefunc();
+                            
                         case (boolarr[i + 4][m + 4]):
-                            placefunc();
+                            
                         case (boolarr[i + 4][m - 4]):
-                            placefunc();
+                            
                         case (boolarr[i][m + 4]):
-                            placefunc();
+                            
                         case (boolarr[i + 5][m]):
-                            placefunc();
+                            
                         case (boolarr[i + 5][m + 1]):
-                            placefunc();
+                            
                         case (boolarr[i + 5][m - 5]):
-                            placefunc();
+                            
                         case (boolarr[i][m + 5]):
-                            placefunc();
+                            
                         case (boolarr[i + 6][m]):
-                            placefunc();
+                            
                         case (boolarr[i + 6][m + 6]):
-                            placefunc();
+                            
                         case (boolarr[i + 6][m - 6]):
-                            placefunc();
+                            
                         case (boolarr[i][m + 6]):
-                            placefunc();
-                            break;
+                            
                     }
                 }
             }
