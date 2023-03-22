@@ -74,18 +74,18 @@ function rotfunc() {
 
 // First Player
 
-function firstTurn() {
-    if (flip % 2 == 0) {
-        localStorage.setItem("firstPlayer", "red");
-    } else {
-        localStorage.setItem("firstPlayer", "blue");
-    }
+// function firstTurn() {
+//     if (flip % 2 == 0) {
+//         localStorage.setItem("firstPlayer", "red");
+//     } else {
+//         localStorage.setItem("firstPlayer", "blue");
+//     }
 
-}
+// }
 
-function checkFirst() {
-    // to read set value
-    const firstPlayer = localStorage.getItem("firstPlayer");
-    // to check value
-    console.log(firstPlayer);
-}
+// function checkFirst() {
+//     // to read set value
+//     const firstPlayer = localStorage.getItem("firstPlayer");
+//     // to check value
+//     console.log(firstPlayer);
+// }
