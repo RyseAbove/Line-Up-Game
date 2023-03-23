@@ -136,6 +136,8 @@ for (let i = 0; i < canvelem.length; i++) {
 
 let aiarray = [[0], [0], [0], [0], [0]];
 
+// ai function
+
 function aiPlace() {
     if (color == 'blue') {
         for (let i = 0; i < (boolarr.length - 1); i++) {
@@ -192,51 +194,53 @@ function aiPlace() {
                             aiarray[5].push[i, m];
                     }
                 }
-            }}}
-        } for (let i = 0; i < aiarray.length; i++) {
-            if (aiarray[i + 1] = 0) {
-                let aiChoice = (Math.floor(Math.random() * aiarray[i].length));
-                let aiColumn = aiarray[i][aiChoice][0];
-                let aiRow = aiarray[i][aiChoice][1];
-                let box = document.getElementById(`${aiColumn + 1}${aiRow + 1}`);
-                let col = box.parentElement.parentElement.id;
-                let num = parseFloat(col.replace('c', '')) - 1;
-                if (boolarr[num][i] == 'e') {
-                    boolarr[num][i] = color;
-                    prefill(num, i, color);
-                    let canvas = document.getElementById(`${num + 1}${i + 1}`);
-                    let draw = canvas.getContext("2d");
-                    let wid = (top.innerWidth / 100);
-                    draw.ellipse(canvas.width / 2, canvas.height / 2, 4 * wid, 2 * wid, 0, 0, Math.PI * 2);
-                    draw.stroke();
-                    draw.fillStyle = fill;
-                    draw.fill();
-                    gamecheck.push(color);
-
-                    cfunc();
-                    rollfuncl2();
-                    rollfuncl3();
-                    rollfuncl4();
-                    rollfuncl5();
-                    rollfuncl6();
-                    tellfunc();
-
-                    if (((gamecheck.length + 1) / 2) % 1 == 0) {
-                        color = "blue";
-                        precolor = 0;
-                        fill = "#5187EE"
-                    }
-                    else {
-                        color = "red";
-                        precolor = 1;
-                        fill = "#EE5151";
-                    }
-                    break;
-                }
             }
         }
+    } for (let i = 0; i < aiarray.length; i++) {
+        if (aiarray[i + 1] == 0) {
+            let aiChoice = (Math.floor(Math.random() * aiarray[i].length));
+            let aiColumn = aiarray[i][aiChoice][0];
+            let aiRow = aiarray[i][aiChoice][1];
+            let box = document.getElementById(`${aiColumn + 1}${aiRow + 1}`);
+            let col = box.parentElement.parentElement.id;
+            let num = parseFloat(col.replace('c', '')) - 1;
+            if (boolarr[num][i] == 'e') {
+                boolarr[num][i] = color;
+                prefill(num, i, color);
+                let canvas = document.getElementById(`${num + 1}${i + 1}`);
+                let draw = canvas.getContext("2d");
+                let wid = (top.innerWidth / 100);
+                draw.ellipse(canvas.width / 2, canvas.height / 2, 4 * wid, 2 * wid, 0, 0, Math.PI * 2);
+                draw.stroke();
+                draw.fillStyle = fill;
+                draw.fill();
+                gamecheck.push(color);
 
-/*filling prearr*/
+                cfunc();
+                rollfuncl2();
+                rollfuncl3();
+                rollfuncl4();
+                rollfuncl5();
+                rollfuncl6();
+                tellfunc();
+
+                if (((gamecheck.length + 1) / 2) % 1 == 0) {
+                    color = "blue";
+                    precolor = 0;
+                    fill = "#5187EE"
+                }
+                else {
+                    color = "red";
+                    precolor = 1;
+                    fill = "#EE5151";
+                }
+                break;
+            }
+        }
+    }
+}
+
+// /*filling prearr*/
 
 function prefill(x, y, z) {
     clist.push([x, y, z]);
