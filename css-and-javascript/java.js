@@ -92,7 +92,7 @@ for (let i = 0; i < canvelem.length; i++) {
                 }
             }
         }
-    })
+})
 }
 
 // hover
@@ -194,7 +194,7 @@ for (let i = 0; i < canvelem.length; i++) {
 //                         case (boolarr[i][m + 6]):
 //                             aiarray[5].push[i, m];
 //                     }   if (m == undefined) {
-                        
+
 //                     }
 //                 }
 //             }
