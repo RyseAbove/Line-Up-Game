@@ -117,7 +117,7 @@ getpoint((data) => {
 function appendwin(cparam){
     for(let i=0; i<points.length; i++){
         console.log(points[i]);
-        if(points[i] == 5){
+        if(points[i] == 8){
             console.log("breh");
             let windiv = document.createElement("div");
             windiv.id = ("windiv");

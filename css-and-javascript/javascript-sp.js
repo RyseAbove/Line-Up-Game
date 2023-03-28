@@ -42,7 +42,7 @@ let points = [0, 0];
 function appendwin(cparam){
     for(let i=0; i<points.length; i++){
         console.log(points[i]);
-        if(points[i] == 5){
+        if(points[i] == 8){
             console.log("breh");
             let windiv = document.createElement("div");
             windiv.id = ("windiv");
@@ -674,7 +674,7 @@ function diecheck() {
 };
 
 function addpoint() {
-    if(color == "red"){
+    if(precolor == 0){
         points[0] += 1;
         appendwin("red");
         document.getElementById('point-red').innerHTML = `${points[0]}`;
