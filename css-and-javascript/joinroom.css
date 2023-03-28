@@ -1,0 +1,202 @@
+/*text styles*/
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .75vw;
+}
+h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1vw;
+}
+
+
+    
+body{
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+    background-image: url("/images/diamond-upholstery.png");    
+}
+
+
+/*rooms*/
+.datadiv{
+    height: 2.5vw;
+    display: flex;
+    width: 55vw;
+    justify-content: space-between;
+}
+.datadiv p:nth-of-type(1){
+    margin-left: 4vw;
+    width: 8vw;
+}
+.datadiv p:nth-of-type(2){
+    width: 8vw;
+    margin-right: 35vw;
+}
+.datadiv p{
+
+}
+
+.roomcont{
+    width: 80vw;
+    min-height: 18vw;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+    background-color: rgb(66, 66, 66, 0.5);
+    border-radius: 2vw;
+    margin-top: 5vw;
+}
+.roomlist{
+    min-height: 10vw;
+    margin-top: 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.roomlist>h2{
+    text-align: center;
+    border-bottom: .15vw solid rgb(66, 66, 66, 0.5);
+    width: 55vw;
+    height: 2vw;
+    margin-bottom: 0;
+}
+
+
+.roomlist>ul{
+    width: 55vw;
+    min-height: 2vw;
+    border-left: .15vw solid rgb(66, 66, 66, 0.5);
+    border-right: .15vw solid rgb(66, 66, 66, 0.5);
+    margin: 0;
+    padding: 0;
+    margin-bottom: 4vw;
+    list-style: none; 
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+.roomlist ul li:last-of-type{
+    border-bottom: .15vw solid rgba(41, 40, 40, 0.5);
+}
+li{
+    height: 2vw;
+    width:  55vw;
+    border-top: .15vw solid rgba(41, 40, 40, 0.5);
+    box-sizing: border-box;
+    padding-left: calc(4vw - .15vw);
+    display: flex;
+    flex-wrap: wrap;
+}
+li p{
+    width: 8vw;
+    margin: 0;
+    line-height: 2vw;
+}
+li button{
+    margin-left: 27vw;
+    height: 2vw;
+
+}
+li p{
+    margin-top: -.15vw;
+}
+li button{
+    height: 1.2vw;
+    margin-top: calc(.4vw - .15vw);
+}
+
+.roomcreate{
+    height: 2vw;
+    align-items: center;
+    display: flex;
+}
+
+.roomcreate h2{
+    width: 20vw;
+    text-align: center;
+}
+
+input::placeholder{
+    color:  rgb(66, 66, 66, 0.5);
+}
+
+.createform{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40vw;
+    margin-left: 30vw;
+}
+
+
+.roomcreate{
+    width: 70vw;
+    background-color: white;    
+    margin-bottom: 2vw;
+}
+.roomlist{
+    width: 60vw;
+    background-color: white;    
+    margin-bottom: 2vw;
+    display: flex;
+    align-self: flex-start;
+}
+.playerlist{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    min-height: 10vw; 
+    width: 8vw;
+    margin-top: 2vw;
+    background-color: white;    
+    margin-bottom: 2vw;
+}
+.playerlist>ul{
+    margin-top: 2.5vw;
+    width: 5vw;
+    min-height: 2vw;
+    border-left: .15vw solid rgb(66, 66, 66, 0.5);
+    border-right: .15vw solid rgb(66, 66, 66, 0.5);
+    padding: 0;
+    margin-bottom: 4vw;
+    list-style: none; 
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.playerlist h2{
+    text-align: center;
+    border-bottom: .15vw solid rgb(66, 66, 66, 0.5);
+    height: 2vw;
+    width: 5vw;
+    margin-bottom: 0;
+}
+
+.playerlist ul li{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    line-height: 1.85vw;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.playerlist ul li:last-of-type{
+    border-bottom: .15vw solid rgba(41, 40, 40, 0.5);
+}
+
+.infoboard{
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#createroom{
+    width: 8vw;
+    height: 1.2vw;
+}

@@ -25,15 +25,20 @@
 }
 
 /*die*/
+.dice{
+    display: flex;
+    flex-wrap: wrap;
+}
 .item {
     position: absolute;
 }
 
 .c3d-bruh {
-    width: 100%;
+    width: 50%;
     height: 20vw;
     display: flex;
     justify-content: space-around;
+    border-bottom: .15vw solid black;
 }
 
 #c3d {
