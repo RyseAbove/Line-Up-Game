@@ -38,23 +38,6 @@ let rollopt;
 
 let points = [0, 0];
 
-//win condition
-function appendwin(cparam){
-    for(let i=0; i<points.length; i++){
-        console.log(points[i]);
-        if(points[i] == 5){
-            console.log("breh");
-            let windiv = document.createElement("div");
-            windiv.id = ("windiv");
-            let winh2 = document.createElement("h2");
-            winh2.innerHTML = `${cparam} has won!`;
-            windiv.appendChild(winh2);
-            document.body.appendChild(windiv);
-            onjoincondition = false;
-        }
-    }
-}
-
 let color = "red";
 let fill = "#EE5151";
 
@@ -109,7 +92,8 @@ for (let i = 0; i < canvelem.length; i++) {
                 }
             }
         }
-})};
+})
+}
 
 // hover
 
@@ -129,7 +113,7 @@ for (let i = 0; i < canvelem.length; i++) {
             draw.fill();
         }
     })
-};
+}
 
 // removes hover
 
@@ -145,7 +129,7 @@ for (let i = 0; i < canvelem.length; i++) {
             draw.clearRect(0, 0, canvas.width, canvas.height);
         }
     })
-};
+}
 
 // Computer Opponent
 
@@ -264,20 +248,20 @@ for (let i = 0; i < canvelem.length; i++) {
 function prefill(x, y, z) {
     clist.push([x, y, z]);
     fillarr();
-};
+}
 
 function fillarr() {
     for (let i = 0; i < (clist.length - 1); i++) {
         let m = 0;
         prearr[clist[i][m]][clist[i][m + 1]] = clist[i][m + 2];
     }
-};
+}
 
 function cfunc() {
     for (let i = 0; i < 5; i++) {
         turndata[i] = false;
     }
-};
+}
 
 //functions for line checks
 function rollfuncl2() {
@@ -482,7 +466,7 @@ function tellfunc() {
             document.getElementById("pos").innerHTML = "";
         }
     }
-};
+}
 
 // Dice visual and math
 
@@ -501,7 +485,7 @@ function roller() {
             rolldie();
         }
     });
-};
+}
 
 
 
@@ -517,7 +501,7 @@ function getRandom() {
     rolledY = (Math.floor(Math.random() * 23) + 1);
     fullX = (rolledX + prevX);
     fullY = (rolledY + prevY);
-};
+}
 
 function rolldie() {
     let i = 0;
@@ -540,7 +524,7 @@ function rolldie() {
             diecheck();
         }
     }, 16.667);
-};
+}
 
 function numcheck() {
     switch (true) {
@@ -610,7 +594,7 @@ function numcheck() {
             }
             break;
     }
-};
+}
 
 let dieresult;
 
@@ -671,20 +655,12 @@ function diecheck() {
         }
         rollopt = false;
     }
-};
+}
 
 function addpoint() {
-    if(color == "red"){
-        points[0] += 1;
-        appendwin("red");
-        document.getElementById('point-red').innerHTML = `${points[0]}`;
-    }
-    else{
-        points[1] += 1;
-        appendwin("blue");
-        document.getElementById('point-blue').innerHTML = `${points[1]}`;
-    }
-    temproll = false;
-    document.getElementById("pos").innerHTML = "Point Gained";  
+    points[precolor]++;
+    [0, 1].forEach((x) => document.getElementById("point-" + ['red', 'blue'][x]).innerHTML = points[x]);
+
+    document.getElementById("pos").innerHTML = "Point Gained";
 }
 
