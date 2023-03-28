@@ -39,10 +39,10 @@ let rollopt;
 let points = [0, 0];
 
 //win condition
-function appendwin(cparam){
-    for(let i=0; i<points.length; i++){
+function appendwin(cparam) {
+    for (let i = 0; i < points.length; i++) {
         console.log(points[i]);
-        if(points[i] == 8){
+        if (points[i] == 8) {
             console.log("breh");
             let windiv = document.createElement("div");
             windiv.id = ("windiv");
@@ -67,9 +67,6 @@ for (let i = 0; i < canvelem.length; i++) {
         if (rollopt == true) {
             return;
         }
-        // else if (color == "blue") {
-        //     aiPlace();
-        // }
         else {
             let box = e.target;
             let col = box.parentElement.parentElement.id;
@@ -105,11 +102,13 @@ for (let i = 0; i < canvelem.length; i++) {
                         precolor = 1;
                         fill = "#EE5151";
                     }
+                    aiPlace();
                     break;
                 }
             }
         }
-})};
+    })
+};
 
 // hover
 
@@ -151,113 +150,141 @@ for (let i = 0; i < canvelem.length; i++) {
 
 // ai array
 
-// let aiarray = [[0], [0], [0], [0], [0]];
+let aiarray = [[0], [0], [0], [0], [0]];
 
 // // ai function
 
-// function aiPlace() {
-//     if (color == 'blue') {
-//         for (let i = 0; i < (boolarr.length - 1); i++) {
-//             for (let m = 0; m < boolarr[i].length; m++) {
-//                 if (boolarr[i][m] == 'e') {
-//                     switch (true) {
-//                         case (boolarr[i + 1][m]):
-//                             aiarray[0].push[i, m];
-//                         case (boolarr[i + 1][m + 1]):
-//                             aiarray[0].push[i, m];
-//                         case (boolarr[i + 1][m - 1]):
-//                             aiarray[0].push[i, m];
-//                         case (boolarr[i][m + 1]):
-//                             aiarray[0].push[i, m];
-//                         case (boolarr[i + 2][m]):
-//                             aiarray[1].push[i, m];
-//                         case (boolarr[i + 2][m + 2]):
-//                             aiarray[1].push[i, m];
-//                         case (boolarr[i + 2][m - 2]):
-//                             aiarray[1].push[i, m];
-//                         case (boolarr[i][m + 2]):
-//                             aiarray[1].push[i, m];
-//                         case (boolarr[i + 3][m]):
-//                             aiarray[2].push[i, m];
-//                         case (boolarr[i + 3][m + 3]):
-//                             aiarray[2].push[i, m];
-//                         case (boolarr[i + 3][m - 3]):
-//                             aiarray[2].push[i, m];
-//                         case (boolarr[i][m + 3]):
-//                             aiarray[2].push[i, m];
-//                         case (boolarr[i + 4][m]):
-//                             aiarray[3].push[i, m];
-//                         case (boolarr[i + 4][m + 4]):
-//                             aiarray[3].push[i, m];
-//                         case (boolarr[i + 4][m - 4]):
-//                             aiarray[3].push[i, m];
-//                         case (boolarr[i][m + 4]):
-//                             aiarray[3].push[i, m];
-//                         case (boolarr[i + 5][m]):
-//                             aiarray[4].push[i, m];
-//                         case (boolarr[i + 5][m + 1]):
-//                             aiarray[4].push[i, m];
-//                         case (boolarr[i + 5][m - 5]):
-//                             aiarray[4].push[i, m];
-//                         case (boolarr[i][m + 5]):
-//                             aiarray[4].push[i, m];
-//                         case (boolarr[i + 6][m]):
-//                             aiarray[5].push[i, m];
-//                         case (boolarr[i + 6][m + 6]):
-//                             aiarray[5].push[i, m];
-//                         case (boolarr[i + 6][m - 6]):
-//                             aiarray[5].push[i, m];
-//                         case (boolarr[i][m + 6]):
-//                             aiarray[5].push[i, m];
-//                     }   if (m == undefined) {
+function aiPlace() {
+    if (color == 'blue') {
+        for (let i = 0; i < (boolarr.length - 1); i++) {
+            for (let m = 0; m < boolarr[i].length; m++) {
+                if (boolarr[i][m] == 'e') {
+                    switch (true) {
+                        case (boolarr[i + 1][m] == "blue"):
+                            aiarray[0].push[i, m];
+                            console.log("length 1");
+                            break;
+                        case (boolarr[i + 1][m + 1] == "blue"):
+                            aiarray[0].push[i, m];
+                            console.log("length 1");
+                            break;
+                        case (boolarr[i + 1][m - 1] == "blue"):
+                            aiarray[0].push[i, m];
+                            console.log("length 1");
+                            break;
+                        case (boolarr[i][m + 1] == "blue"):
+                            aiarray[0].push[i, m];
+                            console.log("length 1");
+                            break;
+                        case (boolarr[i + 2][m] == "blue"):
+                            aiarray[1].push[i, m];
+                            break;
+                        case (boolarr[i + 2][m + 2] == "blue"):
+                            aiarray[1].push[i, m];
+                            break;
+                        case (boolarr[i + 2][m - 2] == "blue"):
+                            aiarray[1].push[i, m];
+                            break;
+                        case (boolarr[i][m + 2] == "blue"):
+                            aiarray[1].push[i, m];
+                            break;
+                        case (boolarr[i + 3][m] == "blue"):
+                            aiarray[2].push[i, m];
+                            break;
+                        case (boolarr[i + 3][m + 3] == "blue"):
+                            aiarray[2].push[i, m];
+                            break;
+                        case (boolarr[i + 3][m - 3] == "blue"):
+                            aiarray[2].push[i, m];
+                            break;
+                        case (boolarr[i][m + 3] == "blue"):
+                            aiarray[2].push[i, m];
+                            break;
+                        case (boolarr[i + 4][m] == "blue"):
+                            aiarray[3].push[i, m];
+                            break;
+                        case (boolarr[i + 4][m + 4] == "blue"):
+                            aiarray[3].push[i, m];
+                            break;
+                        case (boolarr[i + 4][m - 4] == "blue"):
+                            aiarray[3].push[i, m];
+                            break;
+                        case (boolarr[i][m + 4] == "blue"):
+                            aiarray[3].push[i, m];
+                            break;
+                        case (boolarr[i + 5][m] == "blue"):
+                            aiarray[4].push[i, m];
+                            break;
+                        case (boolarr[i + 5][m + 1] == "blue"):
+                            aiarray[4].push[i, m];
+                            break;
+                        case (boolarr[i + 5][m - 5] == "blue"):
+                            aiarray[4].push[i, m];
+                            break;
+                        case (boolarr[i][m + 5] == "blue"):
+                            aiarray[4].push[i, m];
+                            break;
+                        case (boolarr[i + 6][m] == "blue"):
+                            aiarray[5].push[i, m];
+                            break;
+                        case (boolarr[i + 6][m + 6] == "blue"):
+                            aiarray[5].push[i, m];
+                            break;
+                        case (boolarr[i + 6][m - 6] == "blue"):
+                            aiarray[5].push[i, m];
+                            break;
+                        case (boolarr[i][m + 6] == "blue"):
+                            aiarray[5].push[i, m];
+                            break;
+                    }   if (m == undefined) {
 
-//                     }
-//                 }
-//             }
-//         }
-//     } for (let i = 0; i < aiarray.length; i++) {
-//         if (aiarray[i + 1] == 0) {
-//             let aiChoice = (Math.floor(Math.random() * aiarray[i].length));
-//             let aiColumn = aiarray[i][aiChoice][0];
-//             let aiRow = aiarray[i][aiChoice][1];
-//             let box = document.getElementById(`${aiColumn + 1}${aiRow + 1}`);
-//             let col = box.parentElement.parentElement.id;
-//             let num = parseFloat(col.replace('c', '')) - 1;
-//             if (boolarr[num][i] == 'e') {
-//                 boolarr[num][i] = color;
-//                 prefill(num, i, color);
-//                 let canvas = document.getElementById(`${num + 1}${i + 1}`);
-//                 let draw = canvas.getContext("2d");
-//                 let wid = (top.innerWidth / 100);
-//                 draw.ellipse(canvas.width / 2, canvas.height / 2, 4 * wid, 2 * wid, 0, 0, Math.PI * 2);
-//                 draw.stroke();
-//                 draw.fillStyle = fill;
-//                 draw.fill();
-//                 gamecheck.push(color);
+                    }
+                }
+            }
+        }
+    } for (let i = 0; i < aiarray.length; i++) {
+        if (aiarray[i + 1] == 0) {
+            let aiChoice = (Math.floor(Math.random() * aiarray[i].length));
+            let aiColumn = aiarray[i][aiChoice][0];
+            let aiRow = aiarray[i][aiChoice][1];
+            let box = document.getElementById(`${aiColumn + 1}${aiRow + 1}`);
+            let col = box.parentElement.parentElement.id;
+            let num = parseFloat(col.replace('c', '')) - 1;
+            if (boolarr[num][i] == 'e') {
+                boolarr[num][i] = color;
+                prefill(num, i, color);
+                let canvas = document.getElementById(`${num + 1}${i + 1}`);
+                let draw = canvas.getContext("2d");
+                let wid = (top.innerWidth / 100);
+                draw.ellipse(canvas.width / 2, canvas.height / 2, 4 * wid, 2 * wid, 0, 0, Math.PI * 2);
+                draw.stroke();
+                draw.fillStyle = fill;
+                draw.fill();
+                gamecheck.push(color);
 
-//                 cfunc();
-//                 rollfuncl2();
-//                 rollfuncl3();
-//                 rollfuncl4();
-//                 rollfuncl5();
-//                 rollfuncl6();
-//                 tellfunc();
+                cfunc();
+                rollfuncl2();
+                rollfuncl3();
+                rollfuncl4();
+                rollfuncl5();
+                rollfuncl6();
+                tellfunc();
 
-//                 if (((gamecheck.length + 1) / 2) % 1 == 0) {
-//                     color = "blue";
-//                     precolor = 0;
-//                     fill = "#5187EE"
-//                 }
-//                 else {
-//                     color = "red";
-//                     precolor = 1;
-//                     fill = "#EE5151";
-//                 }
-//                 break;
-//             }
-//         }
-//     }   color = "red";
-// }
+                if (((gamecheck.length + 1) / 2) % 1 == 0) {
+                    color = "blue";
+                    precolor = 0;
+                    fill = "#5187EE"
+                }
+                else {
+                    color = "red";
+                    precolor = 1;
+                    fill = "#EE5151";
+                }
+                break;
+            }
+        }
+    } color = "red";
+}
 
 // filling prearr
 
@@ -674,17 +701,17 @@ function diecheck() {
 };
 
 function addpoint() {
-    if(precolor == 0){
+    if (precolor == 0) {
         points[0] += 1;
         appendwin("red");
         document.getElementById('point-red').innerHTML = `${points[0]}`;
     }
-    else{
+    else {
         points[1] += 1;
         appendwin("blue");
         document.getElementById('point-blue').innerHTML = `${points[1]}`;
     }
     temproll = false;
-    document.getElementById("pos").innerHTML = "Point Gained";  
+    document.getElementById("pos").innerHTML = "Point Gained";
 }
 
