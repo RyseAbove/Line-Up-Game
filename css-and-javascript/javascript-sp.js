@@ -42,8 +42,7 @@ let points = [0, 0];
 function appendwin(cparam) {
     for (let i = 0; i < points.length; i++) {
         console.log(points[i]);
-        if (points[i] == 8) {
-            console.log("breh");
+        if (points[i] == 10) {
             let windiv = document.createElement("div");
             windiv.id = ("windiv");
             let winh2 = document.createElement("h2");
